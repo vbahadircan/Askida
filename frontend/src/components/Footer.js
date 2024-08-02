@@ -1,0 +1,39 @@
+import React from 'react';
+import './Footer.css';
+import logo from '../logo_beyaz.png';
+import app_store from '../app_store.png';
+import play_store from '../play_store.png';
+
+const Footer = () => {
+  const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.example.app';
+  const appStoreUrl = 'https://apps.apple.com/us/app/example-app/id123456789';
+
+  const handleGooglePlayClick = () => {
+    window.location.href = googlePlayUrl;
+  };
+
+  const handleAppStoreClick = () => {
+    window.location.href = appStoreUrl;
+  };
+
+  return (
+    <footer>
+      <div className="logo-container">
+        <img src={logo} alt="Asunatech Logo" />
+      </div>
+      <div className="contact-info">
+        <p>İLETİŞİM</p>
+        <p>info@asuna.com</p>
+        <p>© 2024 Asunatech.com Tüm hakları saklıdır</p>
+      </div>
+      <div className="store-links">
+        <div className="store-icons">
+          <img src={app_store} alt="App Store" onClick={handleAppStoreClick} />
+          <img src={play_store} alt="Play Store" onClick={handleGooglePlayClick} />
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

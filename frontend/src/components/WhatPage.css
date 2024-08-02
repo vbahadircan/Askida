@@ -1,0 +1,81 @@
+.what-page {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('../WhatPage_image.jpeg'); /* Update with the correct path */
+    background-size: cover;
+    background-position: center;
+}
+
+.header {
+    color: #6C5A49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-top: 5vh;
+    margin-left: 4vw;
+    padding: 2vw;
+    height: auto;
+}
+
+.description {
+    color: #6C5A49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 5vw;
+    padding: 1vw;
+    width: 70%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.239); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.how-it-works-button {
+    border: 2px solid #6C5A49;
+    color: #6C5A49;
+    background-color: transparent;
+    margin-left: 5vw;
+    margin-top: 2vw;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .how-it-works-button:hover {
+    background-color: #6C5A49;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 6vw; /* Increase font size for smaller screens */
+    }
+
+    .description {
+        font-size: 5vw; /* Increase font size for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+        margin-left: 5vw;
+        background-color: transparent; /* Remove background on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 8vw; /* Further increase font size for very small screens */
+    }
+
+    .description {
+        font-size: 6vw; /* Further increase font size for very small screens */
+        width: 95%; /* Adjust width for very small screens */
+        margin-left: 2.5vw;
+        background-color: transparent; /* Remove background on very small screens */
+    }
+}

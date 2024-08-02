@@ -1,0 +1,65 @@
+/* src/components/AskıdanAl.css */
+
+.askidanAl-container {
+    background-color: #E5F4F2;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .askidanAl-header {
+    color: #523A34;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  .askidanAl-list {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
+    text-align: left;
+    padding: 0 20px;
+  }
+  
+  .askidanAl-list a {
+    color: #523A34;
+    text-decoration: underline;
+  }
+  
+  .askidanAl-image {
+    width: 200px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .askidanAl-header {
+      font-size: 40px;
+    }
+  
+    .askidanAl-list {
+      font-size: 20px;
+    }
+  
+    .askidanAl-image {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .askidanAl-header {
+      font-size: 30px;
+    }
+  
+    .askidanAl-list {
+      font-size: 18px;
+    }
+  
+    .askidanAl-image {
+      width: 120px;
+    }
+  }
+  

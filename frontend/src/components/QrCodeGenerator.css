@@ -1,0 +1,68 @@
+/* src/pages/QrCodeGeneration.css */
+
+.qrCodeGeneration-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+  }
+  
+  .left-content, .right-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .askida-title {
+    font-size: 2rem;
+    color: #042440;
+  }
+  
+  .steps-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    color: #042440;
+  }
+  
+  .steps-list li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .store-icon {
+    height: 40px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
+  /* Custom styles for Navbar and Footer specific to QrCodeGeneration page */
+  .qrCodeGeneration-navbar {
+    background-color: #f8f8f8;
+    color: #042440;
+  }
+  
+  .qrCodeGeneration-footer {
+    background-color: #f8f8f8;
+    color: #042440;
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,170 @@
+/* QrCodeGeneration.css */
+
+/* General page styles */
+.qrCodeGeneration-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #EDF7F6;
+}
+
+/* Navbar styles specific to QrCodeGeneration page */
+.qrCodeGeneration-navbar {
+  position: relative;
+  background-color: #f8f8f8;
+  color: #042440;
+}
+
+.qrCodeGeneration-navbar .nav-links li a {
+  color: #042440;
+}
+
+.qrCodeGeneration-navbar .download-button {
+  background-color: #FFFFFF;
+  color: #FF7526;
+  border: 2px solid #FF7526;
+}
+
+.qrCodeGeneration-navbar .download-button:hover {
+  background-color: #FF7526;
+  color: #fff;
+}
+
+.qr-code-section {
+  background-color: #FF7526; /* Orange background */
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.round-button {
+  background-color: #fff;
+  color: #042440;
+  border: 2px solid #FF7526;
+  border-radius: 10px;
+  width: 100px; /* Set a fixed width */
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 10px; /* Add horizontal margin for spacing */
+}
+
+.round-button.active {
+  background-color: #523A34;
+  color: #fff;
+}
+
+.round-button span {
+  font-size: 1.5rem;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.counter-button {
+  background-color: #fff;
+  color: #FF7526;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  width: 50%;
+  outline: #FF7526 solid 2px;
+}
+
+.counter-button:hover {
+  background-color: #523A34;
+  color: #fff;
+}
+
+.count {
+  padding: 1px 10px;
+  font-size: 2rem;
+  color: #042440;
+}
+
+/* Main content styles */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+  padding: 100px;
+}
+
+.left-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.askida-title {
+  font-size: 2.5rem;
+  color: #042440;
+}
+
+.steps-list {
+  list-style-type: none;
+  padding-bottom: 40px;
+  margin: 20px 0;
+  color: #042440;
+}
+
+.steps-list li {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.store-icon {
+  padding-top: 10px;
+  height: 60px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-content {
+    align-items: center;
+  }
+
+  .qr-code-section {
+    margin-top: 20px;
+  }
+}

@@ -1,35 +1,80 @@
-/* src/components/Navbar.css */
+/* Navbar.css */
 .navbar {
-    background-color: #4B3E32;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Ensure the navbar is on top */
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px; /* Reduce padding for better fit */
+  background-color: transparent; /* Transparent background */
+  z-index: 10; /* Higher z-index to stay on top of other content */
+  color: #fff; /* Text color */
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #FF7526; /* Hover color */
+}
+
+.download-button {
+  background-color: #fff; /* White background */
+  color: #FF7526; /* Orange text */
+  border: 2px solid #FF7526; /* Orange outline */
+  border-radius: 5px;
+  padding: 10px 15px; /* Adjust padding to fit better */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #FF7526; /* Orange background on hover */
+  color: #fff; /* White text on hover */
+}
+
+@media (max-width: 768px) {
+  /* Responsive styling for smaller screens */
+  .navbar {
+      flex-direction: column;
+      align-items: center; /* Center the navbar items */
   }
-  
-  .navbar-items {
-    display: flex;
-    align-items: center;
+
+  .nav-links {
+      flex-direction: row; /* Make the list items in a single row */
+      gap: 20px; /* Increase the gap between items */
+      justify-content: center; /* Center the list items */
+      padding: 10px 0; /* Add padding for better spacing */
   }
-  
-  .navbar-items a {
-    color: white;
-    text-decoration: none;
-    margin-left: 10px;
-    font-weight: bold;
-    padding-right: 10px;
-    display: flex;
-    align-items: center;
+
+  .nav-links li {
+      width: auto; /* Adjust width to auto */
+      text-align: center;
   }
-  
-  .navbar-items a:hover {
-    background-color: #C0601E;
-    border-radius: 5px;
+
+  .download-button {
+      width: auto; /* Adjust width to auto */
+      text-align: center;
+      margin-top: 10px;
   }
-  
-  .navbar-items i {
-    margin-right: 5px;
-  }
-  
+}

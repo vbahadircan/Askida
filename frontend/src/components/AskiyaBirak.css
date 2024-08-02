@@ -1,0 +1,64 @@
+/* src/components/AskıyaBırak.css */
+
+.askiyaBirak-container {
+  background-color: #E5F4F2;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.askiyaBirak-header {
+  color: #523A34;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.askiyaBirak-list {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.askiyaBirak-list a {
+  color: #523A34;
+  text-decoration: underline;
+}
+
+.askiyaBirak-image {
+  width: 200px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .askiyaBirak-header {
+    font-size: 40px;
+  }
+
+  .askiyaBirak-list {
+    font-size: 20px;
+  }
+
+  .askiyaBirak-image {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .askiyaBirak-header {
+    font-size: 30px;
+  }
+
+  .askiyaBirak-list {
+    font-size: 18px;
+  }
+
+  .askiyaBirak-image {
+    width: 120px;
+  }
+}

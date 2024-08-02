@@ -1,0 +1,50 @@
+/* Footer.css */
+footer {
+  background-color: #523A34;
+  padding: 20px 0;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+footer .logo-container {
+  margin-left: 20px;
+}
+footer .logo-container img {
+  height: 40px;
+}
+footer .contact-info {
+  text-align: center;
+}
+footer .contact-info p {
+  margin: 5px 0;
+}
+footer .store-links {
+  margin-right: 20px;
+  text-align: right;
+}
+footer .store-links .store-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer .store-links .store-icons img {
+  height: 40px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+footer .store-links .store-icons img:last-child {
+  margin: 5px 0;
+}
+@media (max-width: 768px) {
+  footer .logo-container img {
+    height: 30px; /* Smaller height for medium screens */
+  }
+}
+@media (max-width: 480px) {
+  footer .logo-container img {
+    height: 20px; /* Even smaller height for small screens */
+  }
+}
