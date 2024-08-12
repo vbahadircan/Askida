@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import logo from './logo_beyaz.png';
 
 function HomePage() {
-  const numberOfFreeDrinks = 123; // Replace this with the actual number of free drinks
+  const numberOfFreeDrinks = 0; // Replace this with the actual number of free drinks
   
   const freeDrinksBannerRef = useRef(null);
   const askidanAlRef = useRef(null);
