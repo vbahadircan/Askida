@@ -11,25 +11,25 @@ const teamMembers = [
   {
     name: 'Ege Cem Sun',
     role: 'Ekip Lideri',
-    description: 'İzmir Katip Çelebi Üniversitesinde Malzeme metalurji bölümü 3. sınıf öğrencisi',
+    description: 'İzmir Katip Çelebi Üniversitesinde Malzeme Metalurji Mühendisliği 3. sınıf öğrencisi',
     image: image1,
   },
   {
     name: 'Sena Asana',
     role: 'Ekip Lideri',
-    description: 'İzmir Katip Çelebi Üniversitesinde Biyomedikal Müjendisliği bölümü 3. sınıf öğrencisi',
+    description: 'İzmir Katip Çelebi Üniversitesinde Biyomedikal Mühendisliği 4. sınıf öğrencisi',
     image: image2,
   },
   {
     name: 'Doğukan İşnel',
     role: 'Yazılımcı',
-    description: 'İzmir Katip Çelebi Üniversitesinde Malzeme metalurji bölümü 3. sınıf öğrencisi',
+    description: 'İzmir Katip Çelebi Üniversitesinde Malzeme Metalurji Mühendisliği 3. sınıf öğrencisi',
     image: image3,
   },
   {
     name: 'Veli Bahadır Can',
     role: 'Yazılımcı',
-    description: 'İzmir Katip Çelebi Üniversitesinde Bilgisayar Mühendisliği bölümü 3. sınıf öğrencisi',
+    description: 'İzmir Katip Çelebi Üniversitesinde Bilgisayar Mühendisliği 3. sınıf öğrencisi',
     image: image4,
   },
 ];

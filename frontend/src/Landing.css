@@ -105,5 +105,10 @@ body, html {
     }
     .scroll-down-icon {
         width: 10vw; /* Maximize width for very small screens */
+        position: absolute;
+        top: calc(50% + 100px); /* Position it below the landing text container */
+        left: 50%;
+        transform: translate(-50%, 0); /* Center horizontally */
+        bottom: auto;
     }
 }

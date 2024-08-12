@@ -37,7 +37,7 @@ body, html {
 }
 
 .home-subtext {
-  font-size: 3rem; /* Adjust font size as needed */
+  font-size: 1.5rem; /* Adjust font size as needed */
   margin: 0;
 }
 
@@ -67,6 +67,9 @@ body, html {
   .discover-button {
     padding: 8px 16px; /* Adjust padding for smaller screens */
     margin-top: 15px; /* Adjust margin for smaller screens */
+  }
+  .home-text-container {
+    margin-top: 60vh; /* Adjust vertical margin for smaller screens */
   }
 }
 

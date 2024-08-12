@@ -14,9 +14,7 @@
     max-width: 80%; /* Slightly smaller max width */
     height: auto;
     margin-bottom: 20px;
-    border-radius: 10px; /* Optional: adds a slight rounded corner */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
-  }
+    border-radius: 10px; /* Optional: adds a slight rounded corner */  }
   
   .coming-soon-text {
     font-size: 1.5em; /* Larger font size */

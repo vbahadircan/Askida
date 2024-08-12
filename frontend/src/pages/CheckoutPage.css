@@ -24,7 +24,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -46,7 +45,6 @@
     overflow-wrap: break-word; /* Ensure long words break to the next line */
     word-break: break-word; /* Ensure long words break to the next line */
     margin-left: 3vw;
-    align-self: center; 
 }
 .checkout-description {
     color: #6C5A49;
@@ -74,6 +72,7 @@
     align-items: center;
     margin-left: 0; /* Remove the left margin */
     padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .checkout-discover-button {
@@ -119,7 +118,8 @@
         height: auto; /* Allow height to adjust based on content */
     }
     .checkout-headline {
-        font-size: 3rem; /* Adjust font size for smaller screens */
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+        align-self: flex-start;
     }
     .checkout-description {
         font-size: 1.6rem; /* Adjust font size for smaller screens */
@@ -145,5 +145,8 @@
         height: auto;
         padding: 6px 12px; /* Adjust padding for extra small-sized screens */
         font-size: 0.9rem; /* Adjust font size for extra small-sized screens */
+    }
+    .text-container {
+        padding: 10px; /* Add padding for extra small-sized screens */
     }
 }

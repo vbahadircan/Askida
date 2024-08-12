@@ -12,21 +12,23 @@
     line-height: normal;
     padding: 30px;
     z-index: 2;
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
 }
 .number {
     font-size: 65px; /* Default font size */
 }
 @media (max-width: 768px) {
     .free-drinks-banner {
-        font-size: 40px;
+        font-size: 30px;
     }
     .number {
-        font-size: 50px; /* Adjust font size for medium screens */
+        font-size: 40px; /* Adjust font size for medium screens */
     }
 }
 @media (max-width: 480px) {
     .free-drinks-banner {
         font-size: 30px;
+        padding: 3px;
     }
     .number {
         font-size: 40px; /* Adjust font size for small screens */

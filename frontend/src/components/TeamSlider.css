@@ -53,6 +53,14 @@
   color: #999;
 }
 
+
+@media (max-width: 1024px) {
+  .team-image {
+    width: 140px;
+    height: 180px;
+  }
+}
+
 /* Media query for tablets */
 @media (max-width: 768px) {
   .team-slider {
@@ -98,7 +106,6 @@
   }
 
   .team-image {
-    width: 100%; /* Full width for one image at a time */
     margin: 0;
     opacity: 1; /* Full opacity for active image */
     transition: transform 0.5s ease; /* Add smooth transition effect */
