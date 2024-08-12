@@ -32,8 +32,8 @@
 }
 
 .qr-code-section {
-  background-color: #FF7526; /* Orange background */
-  padding: 20px;
+  background-color: #FF6600; /* Orange background */
+  padding: 75px 20px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,8 @@
   align-items: center;
   padding: 20px;
   border-radius: 10px;
+  background-color: #FFFFFF; /* White background */
+  margin-bottom: 15px;
 }
 
 .button-container {
@@ -57,27 +59,42 @@
 
 .round-button {
   background-color: #fff;
-  color: #042440;
   border: 2px solid #FF7526;
   border-radius: 10px;
-  width: 100px; /* Set a fixed width */
-  height: 60px;
+  width: 100px;
+  height: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0 10px; /* Add horizontal margin for spacing */
+  margin: 0 10px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 1px;
 }
 
-.round-button.active {
-  background-color: #523A34;
-  color: #fff;
+.round-button img.button-icon {
+  width: 40px;
+  height: 40px;
 }
 
 .round-button span {
-  font-size: 1.5rem;
+  margin-top: 5px;
+  color: #000000;
+  font-size: 1rem;
 }
+
+.round-button.active span {
+  color: #FF7526;
+}
+
+.round-button.active {
+  background-color: #fff;
+}
+
 
 .counter-container {
   display: flex;
@@ -90,12 +107,12 @@
   background-color: #fff;
   color: #FF7526;
   border: none;
-  padding: 10px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50%; /* Make the button a perfect circle */
+  height: 60px;
   margin: 0 10px;
-  width: 50%;
+  width: 60px;
   outline: #FF7526 solid 2px;
 }
 
@@ -107,7 +124,7 @@
 .count {
   padding: 1px 10px;
   font-size: 2rem;
-  color: #042440;
+  color: #e5eaee;
 }
 
 /* Main content styles */
@@ -126,6 +143,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-right: 35px;
 }
 
 .askida-title {
@@ -152,8 +170,31 @@
   cursor: pointer;
 }
 
+
+@media (max-width: 480px) {
+  .qr-code-section {
+    padding-right: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .round-button {
+    width: 80px; /* Reduce button size for smaller screens */
+    height: 80px; /* Reduce button size for smaller screens */
+  }
+
+  .round-button img.button-icon {
+    width: 30px; /* Reduce icon size for smaller screens */
+    height: 30px; /* Reduce icon size for smaller screens */
+  }
+}
+
+
 /* Responsive styles */
 @media (max-width: 768px) {
+
+  .qr-code-section {
+    padding-right: 15px; /* Reduce padding for smaller screens */
+  }
+
   .main-content {
     flex-direction: column;
     align-items: center;

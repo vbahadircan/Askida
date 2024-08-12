@@ -27,16 +27,19 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <div className="background-image">
+      <div className="home-background-image">
         <Navbar logo={logo}/>
-        <div className="text-container">
+        <div className="home-text-container">
           <h1 className="askida-text">ASKIDA</h1>
-          <p className="subtext">“Bir kahve de askıya”</p>
+          <p className="home-subtext">“Bir kahve de askıya”</p>
           <button className="discover-button" onClick={handleDiscoverClick}>Keşfet</button>
         </div>
       </div>
       <div ref={freeDrinksBannerRef}>
-        <FreeDrinksBanner number={numberOfFreeDrinks} numberColor="orange" numberSize="60px" />
+        <FreeDrinksBanner 
+          number={numberOfFreeDrinks} 
+          numberColor="orange" 
+        />
       </div>
       <WhatPage onHowItWorksClick={handleHowItWorksClick} />
       <div ref={askidanAlRef}>

@@ -3,12 +3,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import logoAlternate from '../logologo_laci.jpg'; // Import the alternate logo
+import logoAlternate from '../logologo_laci.svg'; // Import the alternate logo
 import './QrCodeGeneration.css';
 import QRCode from 'qrcode.react';
 import app_store from '../app_store.png';
 import play_store from '../play_store.png';
-
+import teaIconGrey from '../icons/tea-grey.svg';
+import teaIconOrange from '../icons/tea-orange.svg';
+import coffeeIconGrey from '../icons/coffee-grey.svg';
+import coffeeIconOrange from '../icons/coffee-orange.svg';
+import icedCoffeeIconGrey from '../icons/iced-coffee-grey.svg';
+import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
 
 function QrCodeGeneration() {
     
@@ -72,38 +77,53 @@ function QrCodeGeneration() {
             src={play_store}
             alt="Google Play"
             className="store-icon"
-            onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.example.app'}
+            onClick={() => window.location.href = '/404'}
           />
           <img
             src={app_store}
             alt="App Store"
             className="store-icon"
-            onClick={() => window.location.href = 'https://apps.apple.com/us/app/example-app/id123456789'}
+            onClick={() => window.location.href = '/404'}
           />
         </div>
         <div className="qr-code-section">
           <div className="qr-code-container">
-            <QRCode value={qrString} size={256} fgColor="#F57C00" /> {/* Orange color */}
+            <QRCode value={qrString} size={256} fgColor="#000000" bgColor="#FFFFFF"/> {/* Orange color */}
           </div>
           <div className="button-container">
             <button
-              className={`round-button ${selectedProduct === 'tea' ? 'active' : ''}`}
-              onClick={() => selectProduct('tea')}
-            >
-              <span role="img" aria-label="tea">🍵</span> Çay
-            </button>
-            <button
-              className={`round-button ${selectedProduct === 'hotCoffee' ? 'active' : ''}`}
-              onClick={() => selectProduct('hotCoffee')}
-            >
-              <span role="img" aria-label="coffee">☕</span> Kahve
-            </button>
-            <button
-              className={`round-button ${selectedProduct === 'icedCoffee' ? 'active' : ''}`}
-              onClick={() => selectProduct('icedCoffee')}
-            >
-              <span role="img" aria-label="iced coffee">🥤</span> Soğuk Kahve
-            </button>
+          className={`round-button tea ${selectedProduct === 'tea' ? 'active' : ''}`}
+          onClick={() => selectProduct('tea')}
+        >
+          <img
+            src={selectedProduct === 'tea' ? teaIconOrange : teaIconGrey}
+            alt="Tea"
+            className="button-icon"
+          />
+          <span>Çay</span>
+        </button>
+        <button
+          className={`round-button hotCoffee ${selectedProduct === 'hotCoffee' ? 'active' : ''}`}
+          onClick={() => selectProduct('hotCoffee')}
+        >
+          <img
+            src={selectedProduct === 'hotCoffee' ? coffeeIconOrange : coffeeIconGrey}
+            alt="Coffee"
+            className="button-icon"
+          />
+          <span>Kahve</span>
+        </button>
+        <button
+          className={`round-button icedCoffee ${selectedProduct === 'icedCoffee' ? 'active' : ''}`}
+          onClick={() => selectProduct('icedCoffee')}
+        >
+          <img
+            src={selectedProduct === 'icedCoffee' ? icedCoffeeIconOrange : icedCoffeeIconGrey}
+            alt="Iced Coffee"
+            className="button-icon"
+          />
+          <span>Soğuk Kahve</span>
+        </button>
           </div>
           <div className="counter-container">
             <button className="counter-button" onClick={decrementCount}>-</button>

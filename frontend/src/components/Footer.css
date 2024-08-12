@@ -20,6 +20,14 @@ footer .contact-info {
 footer .contact-info p {
   margin: 5px 0;
 }
+footer .contact-info a {
+  color: #fff; /* Change mail link color to white */
+  text-decoration: none; /* Remove underline */
+}
+
+footer .contact-info a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
 footer .store-links {
   margin-right: 20px;
   text-align: right;
@@ -45,6 +53,13 @@ footer .store-links .store-icons img:last-child {
 }
 @media (max-width: 480px) {
   footer .logo-container img {
-    height: 20px; /* Even smaller height for small screens */
+    height: 15px; /* Even smaller height for small screens */
+    padding-right: 3px;
+  }
+
+  footer .store-links .store-icons img {
+    height: 25px;
+    margin: 10px 0;
+    cursor: pointer;
   }
 }

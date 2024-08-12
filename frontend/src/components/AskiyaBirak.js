@@ -11,7 +11,7 @@ const AskiyaBirak = () => {
         Askıya Bırak
       </h1>
       <ol className="askiyaBirak-list">
-        <li>Uygulamayı indirin veya <a href="/askiya-birak">bu linkten</a> askıya bırak seçeneğine gidin.</li>
+        <li>Uygulamayı indirin veya <a href="/askida/askiya-birak">bu linkten</a> askıya bırak seçeneğine gidin.</li>
         <li>Bırakmak istediğiniz ürünü ve adedi seçin.</li>
         <li>Ödemenizi yapın ve QR kodu taratın.</li>
       </ol>

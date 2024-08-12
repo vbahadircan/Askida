@@ -75,7 +75,6 @@
     .description {
         font-size: 6vw; /* Further increase font size for very small screens */
         width: 95%; /* Adjust width for very small screens */
-        margin-left: 2.5vw;
         background-color: transparent; /* Remove background on very small screens */
     }
 }

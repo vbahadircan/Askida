@@ -5,15 +5,15 @@ import app_store from '../app_store.png';
 import play_store from '../play_store.png';
 
 const Footer = () => {
-  const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.example.app';
-  const appStoreUrl = 'https://apps.apple.com/us/app/example-app/id123456789';
+  // const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.example.app';
+  // const appStoreUrl = 'https://apps.apple.com/us/app/example-app/id123456789';
 
   const handleGooglePlayClick = () => {
-    window.location.href = googlePlayUrl;
+    window.location.href = '/404';
   };
 
   const handleAppStoreClick = () => {
-    window.location.href = appStoreUrl;
+    window.location.href = '/404';
   };
 
   return (
@@ -23,7 +23,7 @@ const Footer = () => {
       </div>
       <div className="contact-info">
         <p>İLETİŞİM</p>
-        <p>info@asuna.com</p>
+        <p><a href="mailto:info@asunatech.com">info@asunatech.com</a></p>
         <p>© 2024 Asunatech.com Tüm hakları saklıdır</p>
       </div>
       <div className="store-links">

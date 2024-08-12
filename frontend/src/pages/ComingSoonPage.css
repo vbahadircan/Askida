@@ -1,0 +1,52 @@
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f7f7f7; /* Light background color */
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .center-image {
+    max-width: 80%; /* Slightly smaller max width */
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Optional: adds a slight rounded corner */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  }
+  
+  .coming-soon-text {
+    font-size: 1.5em; /* Larger font size */
+    color: #333; /* Dark text color */
+    max-width: 600px;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif; /* Optional: customize font */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .center-image {
+      max-width: 90%; /* Adjust image size for smaller screens */
+    }
+  
+    .coming-soon-text {
+      font-size: 1.3em; /* Adjust text size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .center-image {
+      max-width: 100%; /* Full width for very small screens */
+    }
+  
+    .coming-soon-text {
+      font-size: 1.2em; /* Further adjust text size for very small screens */
+      padding-right: 5px;
+      padding-left: 5px;
+
+    }
+  }
+  

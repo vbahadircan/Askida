@@ -1,0 +1,93 @@
+.who-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 1vw;
+    padding-left: 1vw;    }
+  
+  .whopage_text-content {
+    flex: 1;
+    margin: 40px;
+  }
+  
+  .whopage_header {
+    color: #6C5A49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-top: 5vh;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    height: auto;
+  }
+  
+  .whopage_description {
+    color: #6C5A49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    padding-right: 2vw;
+    padding-left: 2vw;    
+    width: 95%;
+    padding-top: 2vh;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.239); /* Semi-transparent background */
+  }
+
+  .whopage_image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .whopage_image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .who-page {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .whopage_text-content {
+      text-align: center;
+    }
+  
+    .whopage_header {
+      font-size: 5vw; /* Increase font size for smaller screens */
+    }
+  
+    .whopage_description {
+      font-size: 4vw; /* Increase font size for smaller screens */
+      width: 95%; /* Adjust width for smaller screens */
+      background-color: transparent; /* Remove background on smaller screens */
+    }
+  
+    .whopage_image {
+      max-width: 80%;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .whopage_header {
+      font-size: 10vw; /* Further increase font size for very small screens */
+    }
+  
+    .whopage_description {
+      font-size: 6vw; /* Further increase font size for very small screens */
+      width: 95%; /* Adjust width for very small screens */
+      background-color: transparent; /* Remove background on very small screens */
+    }
+  }

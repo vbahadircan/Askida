@@ -1,10 +1,9 @@
 import React from 'react';
 import './FreeDrinksBanner.css';
 
-const FreeDrinksBanner = ({ number, numberColor = 'orange', numberSize = 'inherit' }) => {
+const FreeDrinksBanner = ({ number, numberColor = 'orange' }) => {
   const numberStyle = {
     color: numberColor,
-    fontSize: numberSize,
   };
 
   return (

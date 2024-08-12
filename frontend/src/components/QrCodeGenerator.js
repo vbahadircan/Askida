@@ -68,7 +68,7 @@ const QrCodeGenerator = () => {
     <div className="App">
       <div className="content">
         <div className="qr-code-container">
-          <QRCode value={qrString} size={256} fgColor="#F57C00" /> {/* Orange color */}
+          <QRCode value={qrString} size={256} fgColor="#FF0000" /> {/* Orange color */}
         </div>
         <div className="button-container">
           <button

@@ -1,0 +1,112 @@
+.team-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px;
+  overflow: hidden; /* Hide overflow to create carousel effect */
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  width: 100%;
+  overflow: hidden; /* Hide extra images */
+}
+
+.team-image {
+  border-radius: 10px;
+  width: 180px;
+  height: 240px;
+  margin: 0 15px;
+  cursor: pointer;
+  opacity: 0.5; /* Default opacity for non-active images */
+  transition: opacity 0.5s ease, box-shadow 0.5s ease;
+}
+
+.team-image.active {
+  opacity: 1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.member-info {
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 3px;
+}
+
+.member-info h2 {
+  margin: 10px 0;
+  font-size: 30px;
+  color: #333;
+}
+
+.member-info h4 {
+  margin: 5px 0;
+  font-size: 24px;
+  color: #666;
+}
+
+.member-info p {
+  margin: 5px 0;
+  font-size: 20px;
+  color: #999;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  .team-slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-image {
+    width: 150px;
+    height: 200px;
+  }
+
+  .member-info {
+    text-align: left;
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+
+/* Media query for phones */
+@media (max-width: 480px) {
+  .team-slider {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .member-info h2 {
+    margin: 6px 0;
+    font-size: 22px;
+    color: #333;
+  }
+
+  .member-info h4 {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .member-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #999;
+  }
+
+  .team-image {
+    width: 100%; /* Full width for one image at a time */
+    margin: 0;
+    opacity: 1; /* Full opacity for active image */
+    transition: transform 0.5s ease; /* Add smooth transition effect */
+  }
+
+  .member-info {
+    text-align: left;
+    max-width: 100%;
+    padding-left: 0;
+  }
+}

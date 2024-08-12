@@ -1,0 +1,149 @@
+/* Existing styles */
+.checkout-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+.video-container,
+.text-container {
+    flex: 1;
+    height: 400px; /* Set a fixed height for both containers */
+    margin-right: 20px;
+    max-width: 100%; /* Ensure containers do not exceed the width */
+}
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop the video to fit the container */
+    border-radius: 10px;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 0; /* Remove the right margin for the text container */
+    max-width: 100%; /* Ensure text container does not exceed the width */
+}
+
+.headline,
+.description {
+    margin-left: 0; /* Ensure both elements start from the same inline position */
+    padding-left: 10px; /* Ensure both elements start from the same inline position */
+}
+
+.checkout-headline {
+    font-size: 3vw;
+    color: #333;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
+    word-break: break-word; /* Ensure long words break to the next line */
+    margin-left: 3vw;
+    align-self: center; 
+}
+.checkout-description {
+    color: #6C5A49;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 3vw;
+    width: 95%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.239); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
+    word-break: break-word; /* Ensure long words break to the next line */
+}
+
+.checkout-button-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center;
+    margin-left: 0; /* Remove the left margin */
+    padding-top: 30px;
+}
+
+.checkout-discover-button {
+    width: 33%;
+    height: auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #FF6600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-discover-button:hover {
+    background-color: #FF7526; /* Existing hover background color */
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Medium-sized screens */
+@media (max-width: 992px) {
+    .checkout-headline {
+        font-size: 3.5vw; /* Adjust font size for smaller screens */
+    }
+    .checkout-discover-button {
+        padding: 8px 16px; /* Adjust padding for medium-sized screens */
+        font-size: 0.9rem; /* Adjust font size for medium-sized screens */
+    }
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .checkout-page {
+        flex-direction: column; /* Change to column layout */
+        align-items: center; /* Center align items */
+    }
+    .video-container,
+    .text-container {
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 20px; /* Add bottom margin for spacing */
+        height: auto; /* Allow height to adjust based on content */
+    }
+    .checkout-headline {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+    .checkout-description {
+        font-size: 1.6rem; /* Adjust font size for smaller screens */
+    }
+    .checkout-discover-button {
+        padding: 8px 16px; /* Adjust padding for small-sized screens */
+        font-size: 1rem; /* Adjust font size for small-sized screens */
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 2.5rem; /* Adjust font size for very small screens */
+    }
+    .checkout-description {
+        font-size: 1.2rem; /* Adjust font size for very small screens */
+    }
+
+    .checkout-discover-button {
+        width: 100%;
+        height: auto;
+        padding: 6px 12px; /* Adjust padding for extra small-sized screens */
+        font-size: 0.9rem; /* Adjust font size for extra small-sized screens */
+    }
+}

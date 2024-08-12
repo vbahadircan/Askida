@@ -1,6 +1,5 @@
 /* Navbar.css */
 .navbar {
-  position: absolute; /* Ensure the navbar is on top */
   top: 0;
   width: 100%;
   display: flex;
