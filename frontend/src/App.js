@@ -5,13 +5,14 @@ import HomePage from './HomePage';
 import QrCodeGeneration from './pages/QrCodeGeneration';
 import ComingSoonPage from './pages/ComingSoonPage';
 import GizlilikPage from './pages/GizlilikPage';
+import AccDeletionPage from './pages/AccDeletionPage';
 
 import { updateFavicon } from './utils/favicon'; // Import the utility function
 
 function App() {
   const location = useLocation();
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     switch (location.pathname) {
       case '/':
         document.title = 'Anasayfa';
@@ -38,6 +39,7 @@ function App() {
         <Route path="/askida/askiya-birak" element={<QrCodeGeneration />} />
         <Route path="/404" element={<ComingSoonPage />} />
         <Route path="/gizlilik-politikasi" element={<GizlilikPage />} />
+        <Route path="/account-deletion" element={<AccDeletionPage />} />
 
       </Routes>
     </div>

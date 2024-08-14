@@ -1,0 +1,26 @@
+.acc-deletion-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+  
+.acc-deletion-content {
+    flex: 1;
+    text-align: center; /* Center text horizontally */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+  
+.acc-deletion-content h2 {
+    margin-bottom: 20px;
+}
+
+.acc-deletion-content a {
+    color: #FF7526; /* Change link color to orange */
+    text-decoration: underline; /* Add underline on hover */
+}
+

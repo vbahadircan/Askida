@@ -1,6 +1,6 @@
 // src/HomePage.js
 
-import React, { useRef } from 'react';
+import React, { useRef} from 'react';
 import './HomePage.css';
 import FreeDrinksBanner from './components/FreeDrinksBanner';
 import WhatPage from './components/WhatPage';
@@ -9,8 +9,12 @@ import AskidanAl from './components/AskidanAl';
 import AskiyaBirak from './components/AskiyaBirak';
 import Footer from './components/Footer';
 import logo from './logo_beyaz.png';
+import { useEffect } from 'react';
 
 function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const numberOfFreeDrinks = 0; // Replace this with the actual number of free drinks
   
   const freeDrinksBannerRef = useRef(null);

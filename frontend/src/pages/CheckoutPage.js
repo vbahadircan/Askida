@@ -1,13 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './CheckoutPage.css';
 import video from '../checkout_video.mp4';
 
 function CheckoutPage() {
-    const navigate = useNavigate();
 
     const handleDiscoverClick = () => {
-        navigate('/askida');
+        window.location.href = '/askida';
     };
 
     return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../logo_beyaz.png';
 import app_store from '../app_store.png';
@@ -19,11 +20,14 @@ const Footer = () => {
   return (
     <footer>
       <div className="logo-container">
-        <img src={logo} alt="Asunatech Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>      
       </div>
       <div className="contact-info">
         <p>İLETİŞİM</p>
         <p><a href="mailto:info@asunatech.com">info@asunatech.com</a></p>
+        <p><a href="/gizlilik-politikasi">Gizlilik Politikası</a></p>
         <p>© 2024 Asunatech.com Tüm hakları saklıdır</p>
       </div>
       <div className="store-links">
@@ -37,3 +41,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

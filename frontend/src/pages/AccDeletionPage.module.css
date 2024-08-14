@@ -1,0 +1,21 @@
+.customNavbar {
+    background-color: #444; /* Custom background color */
+    padding: 15px 30px; /* Custom padding */
+}
+
+.customDownloadButton {
+    background-color: #008CBA; /* Blue background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline-block display */
+    font-size: 16px; /* Font size */
+}
+
+.customDownloadButton:hover {
+    background-color: #005f73; /* Darker blue on hover */
+}

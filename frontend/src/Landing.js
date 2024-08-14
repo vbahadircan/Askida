@@ -9,18 +9,22 @@ import CheckoutPage from './pages/CheckoutPage'; // Import the CheckoutPage comp
 import TeamSlider from './components/TeamSlider';
 import WhoPage from './components/WhoPage';
 
-
 function Landing() {
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, []);
+
     const checkoutPageRef = useRef(null);
 
     const handleArrowClick = () => {
         checkoutPageRef.current.scrollIntoView({ behavior: 'smooth' });
     };
 
+
     return (
         <div className="landing-page">
             <div className="landing-background-image">
-                <Navbar logo={logos}/>
+                <Navbar logo={logos} />
                 <div className="landing-text-container">
                     <img src={logob} alt="askida-logo" className="landing-logo" />
                     <p className="landing-subtext">"Hep Beraber!"</p>
@@ -30,7 +34,9 @@ function Landing() {
             <div ref={checkoutPageRef} className="checkout-page">
                 <CheckoutPage />
             </div>
-            <WhoPage />
+            <div>
+                <WhoPage />
+            </div>
             <TeamSlider />
             <Footer />
         </div>

@@ -28,8 +28,8 @@ function Navbar({ logo, customClass }) {
         </Link>
       </div>
       <ul className="nav-links">
-        <li><a href="/">Hakkımızda</a></li>
-        <li><a href="mailto:info@asunatech.com">İletişim</a></li>
+      <li><a href="/">Hakkımızda</a></li>
+      <li><a href="mailto:info@asunatech.com">İletişim</a></li>
         <li><a href="/askida">ASKIDA</a></li>
       </ul>
       <button className="download-button" onClick={handleDownloadClick}>
