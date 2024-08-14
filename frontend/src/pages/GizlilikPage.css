@@ -1,0 +1,26 @@
+/* src/pages/GizlilikPage.css */
+
+.gizlilik-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+.gizlilik-content {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+.gizlilik-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.gizlilik-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Add more custom styles as needed */

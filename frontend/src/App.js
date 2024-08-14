@@ -4,6 +4,7 @@ import Landing from './Landing';
 import HomePage from './HomePage';
 import QrCodeGeneration from './pages/QrCodeGeneration';
 import ComingSoonPage from './pages/ComingSoonPage';
+import GizlilikPage from './pages/GizlilikPage';
 
 import { updateFavicon } from './utils/favicon'; // Import the utility function
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/askida" element={<HomePage />} />
         <Route path="/askida/askiya-birak" element={<QrCodeGeneration />} />
         <Route path="/404" element={<ComingSoonPage />} />
+        <Route path="/gizlilik-politikasi" element={<GizlilikPage />} />
 
       </Routes>
     </div>
