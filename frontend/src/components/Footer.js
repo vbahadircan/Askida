@@ -28,7 +28,7 @@ const Footer = () => {
         <p>İLETİŞİM</p>
         <p><a href="mailto:info@asunatech.com">info@asunatech.com</a></p>
         <p><a href="/gizlilik-politikasi">Gizlilik Politikası</a></p>
-        <p>© 2024 Asunatech.com Tüm hakları saklıdır</p>
+        <p>© 2024 asunatech.com Tüm hakları saklıdır</p>
       </div>
       <div className="store-links">
         <div className="store-icons">
