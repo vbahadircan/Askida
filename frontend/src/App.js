@@ -32,4 +32,3 @@ export default function AppWrapper() {
   );
 }
 
-export { AppWrapper as default, App };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../logo_beyaz.png';
 import askida_icon from '../askida_icon.svg';
@@ -42,16 +41,16 @@ const Footer = () => {
             <h4>Kişisel Verilerin Korunması</h4>
             <ul>
               <li><a href="/gizlilik-politikasi">Gizlilik Politikası</a></li>
-              <li><a href="#">Mesafeli Satış Sözleşmesi</a></li>
-              <li><a href="#">İptal ve İade Koşulları</a></li>
-              <li><a href="#">Çerez Politikası</a></li>
+              <li><a href="/gizlilik-politikasi">Mesafeli Satış Sözleşmesi</a></li>
+              <li><a href="/gizlilik-politikasi">İptal ve İade Koşulları</a></li>
+              <li><a href="/gizlilik-politikasi">Çerez Politikası</a></li>
             </ul>
           </div>
           <div className="footer-column">
             <h4>Asunatech</h4>
             <ul>
-              <li><a href="#">Hakkımızda</a></li>
-              <li><a href="#">İletişim</a></li>
+              <li><a href="/">Hakkımızda</a></li>
+              <li><a href="7">İletişim</a></li>
               <li><a href="mailto:info@asunatech.com">info@asunatech.com</a></li>
             </ul>
           </div>
