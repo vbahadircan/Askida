@@ -1,6 +1,7 @@
 // src/pages/GizlilikPage.js
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import styles from './GizlilikPage.module.css';
@@ -10,6 +11,10 @@ import logo from '../logo_beyaz.png';
 const GizlilikPage = () => {
   return (
     <div className="gizlilik-page">
+      <Helmet>
+        <title>Gizlilik Politikası</title>
+        <meta name="description" content="Asunatech'in gizlilik politikası hakkında bilgi edinin. Kişisel verilerinizin nasıl korunduğunu öğrenin." />
+      </Helmet>
       <Navbar logo={logo} customClass={styles.customNavbar} 
       /> {/* Apply custom class */}
       <div className="gizlilik-content">

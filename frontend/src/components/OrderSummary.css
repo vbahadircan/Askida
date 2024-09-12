@@ -1,0 +1,102 @@
+.order-summary {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto; /* Add horizontal scroll if content overflows */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+  background-color: #F1F1F1;
+}
+
+td {
+  color: #333;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.total-price {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.payment-button {
+  background-color: #FF6F1E;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.payment-button:hover {
+  background-color: #E65B12;
+}
+
+@media (max-width: 768px) {
+  .order-summary {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .total-price {
+    font-size: 18px;
+  }
+
+  .payment-button {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-summary {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  .total-price {
+    font-size: 16px;
+  }
+
+  .payment-button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

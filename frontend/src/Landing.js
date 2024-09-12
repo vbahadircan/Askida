@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import './Landing.css';
 import Navbar from './components/Navbar'; // Import the Navbar component
 import Footer from './components/Footer';
@@ -23,6 +24,10 @@ function Landing() {
 
     return (
         <div className="landing-page">
+            <Helmet>
+                <title>Asunatech</title>
+                <meta name="description" content="Asunatech, web ve mobil çözümlerde uzmanlaşmış, son teknoloji yazılım geliştirme hizmetleri sunar. İşletmenizi yükseltmek için yenilikçi teknoloji çözümlerimizi keşfedin." />
+            </Helmet>
             <div className="landing-background-image">
                 <Navbar logo={logos} />
                 <div className="landing-text-container">

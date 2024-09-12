@@ -1,0 +1,15 @@
+/* Navbar styles specific to payment page */  
+  .paymentpage-navbar .nav-links li a {
+    color: #042440;
+  }
+  
+  .paymentpage-navbar .download-button {
+    background-color: #FFFFFF;
+    color: #FF7526;
+    border: 2px solid #FF7526;
+  }
+  
+  .paymentpage-navbar .download-button:hover {
+    background-color: #FF7526;
+    color: #fff;
+  }

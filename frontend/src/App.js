@@ -1,36 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Landing from './Landing';
 import HomePage from './HomePage';
 import QrCodeGeneration from './pages/QrCodeGeneration';
 import ComingSoonPage from './pages/ComingSoonPage';
 import GizlilikPage from './pages/GizlilikPage';
 import AccDeletionPage from './pages/AccDeletionPage';
-
-import { updateFavicon } from './utils/favicon'; // Import the utility function
+import PaymentPage from './pages/PaymentPage';
 
 function App() {
-  const location = useLocation();
-
-  React.useLayoutEffect(() => {
-    switch (location.pathname) {
-      case '/':
-        document.title = 'Anasayfa';
-        updateFavicon('/logo_beyaz.svg'); // Update favicon for '/'
-        break;
-      case '/askida':
-        document.title = 'Askıda';
-        updateFavicon('/iced-coffee-orange.svg'); // Update favicon for '/askida'
-        break;
-      case '/askida/askiya-birak':
-        document.title = 'Askıya Bırak';
-        updateFavicon('/iced-coffee-orange.svg'); // Update favicon for '/askida'
-        break;
-      default:
-        document.title = 'Asunatech';
-    }
-  }, [location.pathname]);
-
   return (
     <div className="App">
       <Routes>
@@ -40,7 +18,7 @@ function App() {
         <Route path="/404" element={<ComingSoonPage />} />
         <Route path="/gizlilik-politikasi" element={<GizlilikPage />} />
         <Route path="/account-deletion" element={<AccDeletionPage />} />
-
+        <Route path="/askida/askiya-birak/uzaktan/" element={<PaymentPage />} />
       </Routes>
     </div>
   );
@@ -53,3 +31,5 @@ export default function AppWrapper() {
     </Router>
   );
 }
+
+export { AppWrapper as default, App };

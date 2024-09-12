@@ -1,65 +1,185 @@
-/* Footer.css */
-footer {
-  background-color: #523A34;
-  padding: 20px 0;
-  color: #fff;
+.footer {
+  background-color: #1f2937; /* Dark background */
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-footer .logo-container {
-  margin-left: 20px;
-}
-footer .logo-container img {
-  height: 40px;
-}
-footer .contact-info {
-  text-align: center;
-}
-footer .contact-info p {
-  margin: 5px 0;
-}
-footer .contact-info a {
-  color: #fff; /* Change mail link color to white */
-  text-decoration: none; /* Remove underline */
+  padding: 20px 50px;
+  font-family: 'Arial', sans-serif;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
-footer .contact-info a:hover {
-  text-decoration: underline; /* Add underline on hover */
-}
-footer .store-links {
-  margin-right: 20px;
-  text-align: right;
-}
-footer .store-links .store-icons {
+.footer-left {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+}
+
+.logos {
+  margin-bottom: 15px;
+}
+
+.asunatech-logo {
+  width: auto;
+  height: 48px;
+  margin-right: 15px;
+}
+
+.askida_icon {
+  width: 40px;
+  height: auto;
+}
+
+.payment-logos {
+  display: flex;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-footer .store-links .store-icons img {
-  height: 40px;
-  margin: 10px 0;
-  cursor: pointer;
+
+.payment-logo {
+  width: 350px;
+  height: auto;
+  cursor: pointer; /* Add cursor pointer */
 }
-footer .store-links .store-icons img:last-child {
-  margin: 5px 0;
+
+.store-icon {
+  width: 150px; /* Adjust width as needed */
+  height: auto;
+  margin-left: 15px; /* Add margin for spacing */
+  cursor: pointer; /* Add cursor pointer */
 }
+
+.footer-right {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #9ca3af;
+}
+
+.footer-bottom {
+  background-color: #1f2937; /* Dark background */
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: aliceblue;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-  footer .logo-container img {
-    height: 30px; /* Smaller height for medium screens */
-  }
-}
-@media (max-width: 480px) {
-  footer .logo-container img {
-    height: 15px; /* Even smaller height for small screens */
-    padding-right: 3px;
+  .footer {
+    padding: 20px;
   }
 
-  footer .store-links .store-icons img {
-    height: 25px;
-    margin: 10px 0;
-    cursor: pointer;
+  .footer-left {
+    align-items: center;
+  }
+
+  .logos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .asunatech-logo,
+  .askida_icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .payment-logos,
+  .app-stores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-icon {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-column {
+    align-items: center;
+  }
+
+  .footer-column ul {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-column h4 {
+    text-align: center;
+  }
+  .footer-left {
+    align-items: center;
+  }
+
+  .logos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .asunatech-logo,
+  .askida_icon {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  .payment-logos,
+  .app-stores {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-icon {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-column {
+    align-items: center;
+  }
+
+  .footer-column ul {
+    text-align: center;
   }
 }

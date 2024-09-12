@@ -15,7 +15,7 @@ const teamMembers = [
     image: image1,
   },
   {
-    name: 'Sena Asana',
+    name: 'Elif Sena Asana',
     role: 'Ekip Lideri',
     description: 'İzmir Katip Çelebi Üniversitesinde Biyomedikal Mühendisliği 4. sınıf öğrencisi',
     image: image2,

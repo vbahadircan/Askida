@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F0F4F3;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column; /* Stack containers vertically by default */
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh; /* Ensure the container takes up the full viewport height */
+  margin-top: 50px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  flex: 1; /* Take up remaining space */
+}
+
+
+.left-container {
+  width: 48%; /* Adjust width to 48% */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-container {
+  width: 48%; /* Adjust width to 48% */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.bottom-container {
+  margin-top: 20px; /* Add margin-top for spacing */
+  padding-bottom: 60px; /* Add padding to prevent overlap with footer */
+  max-width: 600px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column; /* Ensure the form is stacked vertically */
+  align-items: flex-start; /* Align items to the left */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+form {
+  width: 100%; /* Ensure the form takes up the full width */
+  margin-top: 20px; /* Add margin-top for spacing */
+}
+
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+form input {
+  padding: 10px; /* Add padding to input fields */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+  .top-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-container, .right-container {
+    width: 100%;
+  }
+  .main-container {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-container {
+    margin-top: 20px;
+  }
+  .main-container
+  {
+    padding: 25px;
+  }
+}

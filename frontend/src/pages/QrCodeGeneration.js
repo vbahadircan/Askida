@@ -1,6 +1,7 @@
 // src/pages/QrCodeGeneration.js
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import logoAlternate from '../logologo_laci.svg'; // Import the alternate logo
@@ -64,6 +65,10 @@ function QrCodeGeneration() {
 
   return (
     <div className="qrCodeGeneration-page">
+      <Helmet>
+        <title>Askıya Bırak</title>
+        <meta name="description" content="Asunatech'in Askıya Bırak sayfası ile kolayca QR kodlar oluşturun ve askıya kahve bırakın." />
+      </Helmet>
       <Navbar logo={logoAlternate} customClass="qrCodeGeneration-navbar" />
       <div className="main-content">
         <div className="left-content">
