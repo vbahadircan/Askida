@@ -7,8 +7,8 @@ import Footer from '../components/Footer';
 import logoAlternate from '../logologo_laci.svg'; // Import the alternate logo
 import './QrCodeGeneration.css';
 import QRCode from 'qrcode.react';
-import app_store from '../app_store.png';
-import play_store from '../play_store.png';
+import app_store from '../assets/images/app_store.webp';
+import play_store from '../assets/images/play_store.webp';
 import teaIconGrey from '../icons/tea-grey.svg';
 import teaIconOrange from '../icons/tea-orange.svg';
 import coffeeIconGrey from '../icons/coffee-grey.svg';

@@ -55,6 +55,22 @@ td {
   background-color: #E65B12;
 }
 
+.agreement-section {
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+
+.legal-agreement {
+  margin-left: 5px;
+}
+
+.highlighted {
+  color: #E65B12;
+  text-decoration: underline; /* Underline the text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+
 @media (max-width: 768px) {
   .order-summary {
     width: 100%;

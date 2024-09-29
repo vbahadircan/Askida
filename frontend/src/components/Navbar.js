@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'; // Import the CSS file
 
-function Navbar({ logo, customClass }) {
+function Navbar({ logo, customClass, textColor = '#fff', backgroundColor = 'transparent' }) {
   const handleDownloadClick = () => {
     // const googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.example.app';
     // const appStoreUrl = 'https://apps.apple.com/us/app/example-app/id123456789';
@@ -21,16 +21,16 @@ function Navbar({ logo, customClass }) {
   };
 
   return (
-    <nav className={`navbar ${customClass}`}>
+    <nav className={`navbar ${customClass}`} style={{ backgroundColor }}>
       <div className="logo">
         <Link to="/">
           <img src={logo} alt="Logo" className="logo" />
         </Link>
       </div>
-      <ul className="nav-links">
-        <li><Link to="/hakkimizda">Hakkımızda</Link></li>
-        <li><a href="mailto:info@asunatech.com">İletişim</a></li>
-        <li><Link to="/askida">ASKIDA</Link></li>
+      <ul className="nav-links" style={{ color: textColor }}>
+        <li><Link to="/hakkimizda" style={{ color: textColor }}>Hakkımızda</Link></li>
+        <li><a href="mailto:info@asunatech.com" style={{ color: textColor }}>İletişim</a></li>
+        <li><Link to="/askida" style={{ color: textColor }}>ASKIDA</Link></li>
       </ul>
       <button className="download-button" onClick={handleDownloadClick}>
         Askıda'yı İndirin
@@ -38,5 +38,4 @@ function Navbar({ logo, customClass }) {
     </nav>
   );
 }
-
 export default Navbar;

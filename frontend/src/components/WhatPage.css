@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: 100vh; /* Full viewport height */
-    background-image: url('../WhatPage_image.jpeg'); /* Update with the correct path */
+    background-image: url('../assets/images/WhatPage_image.webp'); /* Update with the correct path */
     background-size: cover;
     background-position: center;
 }

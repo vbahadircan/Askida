@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './TeamSlider.css';
 
-import image1 from '../cems_pp.jpeg';
-import image2 from '../sena_pp.jpg';
-import image3 from '../dodo_pp.jpg';
-import image4 from '../pasa.jpg';
+import image1 from '../assets/images/cems_pp.webp';
+import image2 from '../assets/images/sena_pp.webp';
+import image3 from '../assets/images/dodo_pp.webp';
+import image4 from '../assets/images/pasa.webp';
 
 // Array of team members with their images and related information
 const teamMembers = [

@@ -1,0 +1,22 @@
+.legal-policy-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.legal-policy-content {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-policy-content h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.legal-policy-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}

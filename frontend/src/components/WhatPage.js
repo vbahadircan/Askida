@@ -1,5 +1,3 @@
-// src/components/WhatPage.js
-
 import React from 'react';
 import './WhatPage.css';
 

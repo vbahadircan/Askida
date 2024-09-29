@@ -1,7 +1,5 @@
-// src/components/AskıyaBırak.js
-
 import React from 'react';
-import phoneImage from '../birak.png';
+import phoneImage from '../assets/images/birak.webp';
 import './AskiyaBirak.css';
 
 const AskiyaBirak = () => {

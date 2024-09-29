@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import './QrCodeGenerator.css';
 import QRCode from 'qrcode.react';
-import app_store from '../app_store.png';
-import play_store from '../play_store.png';
+import app_store from '../assets/images/app_store.webp';
+import play_store from '../assets/images/play_store.webp';
 
 const QrCodeGenerator = () => {
   const [selectedProduct, setSelectedProduct] = useState('');

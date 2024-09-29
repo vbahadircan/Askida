@@ -11,31 +11,36 @@ body {
 
 .main-container {
   display: flex;
-  flex-direction: column; /* Stack containers vertically by default */
+  flex-direction: column;
+  /* Stack containers vertically by default */
   justify-content: space-between;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: 100vh; /* Ensure the container takes up the full viewport height */
+  min-height: 100vh;
+  /* Ensure the container takes up the full viewport height */
   margin-top: 50px;
 }
 
 .top-container {
   display: flex;
   justify-content: space-between;
-  flex: 1; /* Take up remaining space */
+  flex: 1;
+  /* Take up remaining space */
 }
 
 
 .left-container {
-  width: 48%; /* Adjust width to 48% */
+  width: 48%;
+  /* Adjust width to 48% */
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .right-container {
-  width: 48%; /* Adjust width to 48% */
+  width: 48%;
+  /* Adjust width to 48% */
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
@@ -44,23 +49,29 @@ body {
 }
 
 .bottom-container {
-  margin-top: 20px; /* Add margin-top for spacing */
-  padding-bottom: 60px; /* Add padding to prevent overlap with footer */
+  margin-top: 20px;
+  /* Add margin-top for spacing */
+  padding-bottom: 60px;
+  /* Add padding to prevent overlap with footer */
   max-width: 600px;
 }
 
 .form-container {
   display: flex;
-  flex-direction: column; /* Ensure the form is stacked vertically */
-  align-items: flex-start; /* Align items to the left */
+  flex-direction: column;
+  /* Ensure the form is stacked vertically */
+  align-items: flex-start;
+  /* Align items to the left */
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 form {
-  width: 100%; /* Ensure the form takes up the full width */
-  margin-top: 20px; /* Add margin-top for spacing */
+  width: 100%;
+  /* Ensure the form takes up the full width */
+  margin-top: 20px;
+  /* Add margin-top for spacing */
 }
 
 
@@ -72,7 +83,8 @@ form label {
 }
 
 form input {
-  padding: 10px; /* Add padding to input fields */
+  padding: 10px;
+  /* Add padding to input fields */
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -80,15 +92,28 @@ form input {
 
 
 @media (max-width: 768px) {
+  .main-container {
+    flex-direction: column-reverse;
+  }
+
   .top-container {
     flex-direction: column;
     align-items: center;
   }
-  .left-container, .right-container {
+
+  .left-container,
+  .right-container {
     width: 100%;
+    padding-bottom: 20px;
+
   }
+
   .main-container {
     padding: 25px;
+  }
+
+  .bottom-container {
+    padding-bottom: 0;
   }
 }
 
@@ -96,8 +121,8 @@ form input {
   .right-container {
     margin-top: 20px;
   }
-  .main-container
-  {
+
+  .main-container {
     padding: 25px;
   }
 }

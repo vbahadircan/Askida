@@ -14,6 +14,7 @@
 .footer-left {
   display: flex;
   flex-direction: column;
+  padding-right: 40px;
 }
 
 .logos {
@@ -24,11 +25,13 @@
   width: auto;
   height: 48px;
   margin-right: 15px;
+  margin-bottom: 20px;
 }
 
 .askida_icon {
   width: 40px;
   height: auto;
+  margin-bottom: 20px;
 }
 
 .payment-logos {
@@ -96,6 +99,7 @@
 
   .footer-left {
     align-items: center;
+    padding-left: 20px;
   }
 
   .logos {
@@ -109,8 +113,7 @@
     margin-bottom: 10px;
   }
 
-  .payment-logos,
-  .app-stores {
+  .payment-logos {
     flex-direction: column;
     align-items: center;
   }
@@ -127,7 +130,7 @@
   }
 
   .footer-column {
-    align-items: center;
+    align-self: center;
   }
 
   .footer-column ul {
@@ -142,6 +145,7 @@
 
   .footer-column h4 {
     text-align: center;
+    align-self: center;
   }
   .footer-left {
     align-items: center;
@@ -156,10 +160,10 @@
   .askida_icon {
     margin-left: 10px;
     margin-bottom: 10px;
+    height: 40px;
   }
 
-  .payment-logos,
-  .app-stores {
+  .payment-logos {
     flex-direction: column;
     align-items: center;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './WhoPage.css';
-import who_page from '../who_page.jpg';
+import who_page from '../assets/images/who_page.webp';
 
 function WhoPage() {
     return (

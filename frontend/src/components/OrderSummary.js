@@ -1,11 +1,7 @@
 import React from "react";
 import "./OrderSummary.css";
 
-const OrderSummary = ({ items, deleteItem }) => {
-  const calculateTotal = () => {
-    return items.reduce((total, item) => total + item.quantity * item.price, 0);
-  };
-
+const OrderSummary = React.memo(({ items, totalPrice, handlePayment, deleteItem, isAgreed, handleAgreementChange, openLegalDocuments }) => {
   return (
     <div className="order-summary">
       <table>
@@ -24,7 +20,7 @@ const OrderSummary = ({ items, deleteItem }) => {
               <td>{item.name}</td>
               <td>{item.quantity}</td>
               <td>{item.price} ₺</td>
-              <td>{item.quantity * item.price} ₺</td>
+              <td>{(item.quantity * item.price).toFixed(2)} ₺</td>
               <td>
                 <button className="delete-btn" onClick={() => deleteItem(item.name)}>🗑️</button>
               </td>
@@ -32,10 +28,23 @@ const OrderSummary = ({ items, deleteItem }) => {
           ))}
         </tbody>
       </table>
-      <div className="total-price">Toplam = {calculateTotal()} ₺</div>
-      <button className="payment-button">Ödemeye Geç</button>
+      <div className="total-price">Toplam: {(totalPrice).toFixed(2)} ₺</div>
+      <button className="payment-button" onClick={handlePayment}>
+        Ödemeye Geç
+      </button>
+      <div className="agreement-section">
+        <input
+          type="checkbox"
+          id="legalAgreement"
+          checked={isAgreed}
+          onChange={handleAgreementChange}
+        />
+        <label htmlFor="legalAgreement">
+          <span className="highlighted" onClick={openLegalDocuments}> Ön bilgilendirme Formu</span> ve
+          <span className="highlighted" onClick={openLegalDocuments}> Mesafeli Satış sözleşmesini</span> kabul ediyorum.        </label>
+      </div>
     </div>
   );
-};
+});
 
 export default OrderSummary;

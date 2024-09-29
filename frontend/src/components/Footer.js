@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../logo_beyaz.png';
-import askida_icon from '../askida_icon.svg';
-import iyzicofooter from '../iyzicofooter.svg';
-import app_store from '../app_store.png';
-import play_store from '../play_store.png';
+import logo from '../assets/images/logo_beyaz.webp';
+import askida_icon from '../assets/images/askida_icon.webp';
+import iyzicofooter from '../assets/images/iyzicofooter.webp';
+import app_store from '../assets/images/app_store.webp';
+import play_store from '../assets/images/play_store.webp';
 
 const Footer = () => {
   const handlePlayStoreClick = () => {
@@ -41,9 +41,9 @@ const Footer = () => {
             <h4>Kişisel Verilerin Korunması</h4>
             <ul>
               <li><a href="/gizlilik-politikasi">Gizlilik Politikası</a></li>
-              <li><a href="/gizlilik-politikasi">Mesafeli Satış Sözleşmesi</a></li>
-              <li><a href="/gizlilik-politikasi">İptal ve İade Koşulları</a></li>
-              <li><a href="/gizlilik-politikasi">Çerez Politikası</a></li>
+              <li><a href="/mesafeli-satis-sozlesmesi">Mesafeli Satış Sözleşmesi</a></li>
+              <li><a href="/iptal-ve-iade-kosullari">İptal ve İade Koşulları</a></li>
+              <li><a href="/uyelik-ve-kullanim-sartlari">Üyelik ve Kullanım Şartları</a></li>
             </ul>
           </div>
           <div className="footer-column">

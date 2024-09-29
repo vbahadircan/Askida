@@ -1,7 +1,7 @@
 // src/components/AskıdanAl.js
 
 import React from 'react';
-import phoneImage from '../al.png';
+import phoneImage from '../assets/images/al.webp';
 import './AskidanAl.css';
 
 const AskidanAl = () => {
