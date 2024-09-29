@@ -16,12 +16,17 @@ app.use(limiter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const allowedOrigins = ['http://localhost:3000']; // Add your frontend URL here
+// Set CORS origin dynamically based on the environment
+const allowedOrigins = [
+  process.env.BACKEND_API_URL_PRODUCTION, // Production URL
+  process.env.BACKEND_API_URL_DEPLOYMENT, // Deployment URL (staging/preview)
+  'http://localhost:3000', // Localhost for development
+];
 
 app.use(cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST'],
-    credentials: true,
+  origin: allowedOrigins,
+  methods: ['GET', 'POST'],
+  credentials: true,
 }));
 
 const iyzipay = new Iyzipay({
@@ -52,7 +57,7 @@ app.post('/payment/create', [
     basketId: 'B67832',
     paymentChannel: Iyzipay.PAYMENT_CHANNEL.WEB,
     paymentGroup: Iyzipay.PAYMENT_GROUP.PRODUCT,
-    callbackUrl: 'http://localhost:8000/payment/callback', // Ensure this is correct
+    callbackUrl: `${process.env.BACKEND_API_URL_DEPLOYMENT}/payment/callback`, // Ensure this is correct
     buyer: {
       id: 'BY789',
       name: 'John',
@@ -129,9 +134,9 @@ app.post('/payment/callback', (req, res) => {
       console.log('Payment retrieve result:', result);
   
       if (result.status === 'success') {
-        return res.redirect(`http://localhost:3000/payment-success?status=success`);
+        return res.redirect(`${process.env.BACKEND_API_URL_DEPLOYMENT}/payment-success?status=success`);
       } else {
-        return res.redirect(`http://localhost:3000/payment-failure?status=failed`);
+        return res.redirect(`${process.env.BACKEND_API_URL_DEPLOYMENT}/payment-success?status=failed`);
       }
     });
   });

@@ -9,6 +9,11 @@ import coffeeIconOrange from '../icons/coffee-orange.svg';
 import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
 import LoadingSpinner from './LoadingSpinner'; 
 
+const apiUrl = process.env.NODE_ENV === 'production'
+  ? process.env.REACT_APP_API_URL_PRODUCTION
+  : process.env.REACT_APP_API_URL_DEPLOYMENT;
+
+
 const MainContainer = () => {
   const [items, setItems] = useState([]);
   const [formData, setFormData] = useState({});
@@ -106,7 +111,7 @@ const MainContainer = () => {
     console.log('Sending payload:', payload);
     setLoading(true); // Set loading to true before payment submission
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/payment/create`, {
+      const response = await fetch(`${apiUrl}/payment/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
