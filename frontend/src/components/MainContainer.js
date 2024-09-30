@@ -9,7 +9,7 @@ import coffeeIconOrange from '../icons/coffee-orange.svg';
 import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
 import LoadingSpinner from './LoadingSpinner'; 
 
-const apiUrl = "backend-xi-peach.vercel.app"
+const apiUrl = process.env.REACT_APP_API_URL;
 
 
 const MainContainer = () => {
