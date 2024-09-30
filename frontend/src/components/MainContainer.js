@@ -9,9 +9,7 @@ import coffeeIconOrange from '../icons/coffee-orange.svg';
 import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
 import LoadingSpinner from './LoadingSpinner'; 
 
-const apiUrl = process.env.NODE_ENV === 'production'
-  ? process.env.REACT_APP_API_URL_PRODUCTION
-  : process.env.REACT_APP_API_URL_DEPLOYMENT;
+const apiUrl = "backend-xi-peach.vercel.app"
 
 
 const MainContainer = () => {
