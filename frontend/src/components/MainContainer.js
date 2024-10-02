@@ -109,7 +109,7 @@ const MainContainer = () => {
     console.log('Sending payload:', payload);
     setLoading(true); // Set loading to true before payment submission
     try {
-      const response = await fetch(`${apiUrl}payment/create`, {
+      const response = await fetch(`${apiUrl}/payment/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
