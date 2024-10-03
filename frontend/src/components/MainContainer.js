@@ -120,8 +120,8 @@ const MainContainer = () => {
       const data = await response.json();
       if (response.ok) {
         setLoading(false); // Set loading to false after successful payment submission
-        document.getElementById('iyzipay-checkout-form').innerHTML = data.checkoutFormContent;
-      } else {
+        window.location.href = data.paymentPageUrl;
+       } else {
         alert('Ödeme oluşturma hatası. Lütfen daha sonra tekrar deneyiniz.');
         console.error('Ödeme oluşturma hatası:', data);
       }
@@ -143,8 +143,6 @@ const MainContainer = () => {
 
   return (
     <div className="main-container">
-      <div id="iyzipay-checkout-form" class="responsive"></div>
-
       <div className="top-container">
         <div className="left-container">
           <DrinkButton
