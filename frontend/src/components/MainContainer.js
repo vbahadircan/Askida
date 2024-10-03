@@ -120,7 +120,13 @@ const MainContainer = () => {
       const data = await response.json();
       if (response.ok) {
         setLoading(false); // Set loading to false after successful payment submission
-        document.getElementById('iyzipay-checkout-form').innerHTML = data.checkoutFormContent;
+        const iyzipayCheckoutForm = document.getElementById('iyzipay-checkout-form');
+
+        if (iyzipayCheckoutForm) {
+          iyzipayCheckoutForm.innerHTML = data.checkoutFormContent; // Inject the payment form HTML
+        } else {
+          console.error('iyzipay-checkout-form element not found');
+        }
 
         // Optionally, scroll to the form for a better user experience
         document.getElementById('iyzipay-checkout-form').scrollIntoView({ behavior: 'smooth' });
