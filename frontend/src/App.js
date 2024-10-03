@@ -8,7 +8,7 @@ import GizlilikPage from './pages/GizlilikPage';
 import AccDeletionPage from './pages/AccDeletionPage';
 import PaymentPage from './pages/PaymentPage';
 import LegalPolicyPage from './pages/LegalPolicyPage';
-import PaymentSuccess from './pages/PaymentStatusPage';
+import PaymentStatusPage from './pages/PaymentStatusPage';
 
 
 function App() {
@@ -25,8 +25,8 @@ function App() {
         <Route path="/mesafeli-satis-sozlesmesi" element={<LegalPolicyPage contentFile="data/mesafeli-satis-sozlesmesi.json" />} />
         <Route path="/iptal-ve-iade-kosullari" element={<LegalPolicyPage contentFile="data/iptal-ve-iade-kosullari.json" />} />
         <Route path="/uyelik-ve-kullanim-sartlari" element={<LegalPolicyPage contentFile="data/uyelik-ve-kullanim-sartlari.json" />} />
-        <Route path="/payment-success" element={<PaymentSuccess />} />
-        <Route path="/payment-failure" element={<PaymentSuccess />} />
+        <Route path="/payment-success" element={<PaymentStatusPage />} />
+        <Route path="/payment-failure" element={<PaymentStatusPage />} />
       
       </Routes>
     </div>
