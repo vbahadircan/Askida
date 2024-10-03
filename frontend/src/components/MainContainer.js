@@ -7,7 +7,7 @@ import LegalModal from './LegalModal'; // Import the LegalModal component
 import teaIconOrange from '../icons/tea-orange.svg';
 import coffeeIconOrange from '../icons/coffee-orange.svg';
 import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
-import LoadingSpinner from './LoadingSpinner'; 
+import LoadingSpinner from './LoadingSpinner';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -120,7 +120,11 @@ const MainContainer = () => {
       const data = await response.json();
       if (response.ok) {
         setLoading(false); // Set loading to false after successful payment submission
-        window.location.href = data.paymentPageUrl;
+        document.getElementById('iyzipay-checkout-form').innerHTML = data.checkoutFormContent;
+
+        // Optionally, scroll to the form for a better user experience
+        document.getElementById('iyzipay-checkout-form').scrollIntoView({ behavior: 'smooth' });
+
       } else {
         alert('Ödeme oluşturma hatası. Lütfen daha sonra tekrar deneyiniz.');
         console.error('Ödeme oluşturma hatası:', data);
@@ -129,11 +133,11 @@ const MainContainer = () => {
       alert('Ağ hatası. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz.');
       console.error('Ödeme oluşturma hatası:', error);
     } finally {
-      console.log('Payment submission completed.'); 
+      console.log('Payment submission completed.');
     }
   };
 
-   const calculateTotal = useCallback(() => {
+  const calculateTotal = useCallback(() => {
     return items.reduce((total, item) => total + item.quantity * item.price, 0);
   }, [items]);
 
@@ -168,14 +172,14 @@ const MainContainer = () => {
           />
         </div>
         <div className="right-container">
-          <OrderSummary 
-            items={items} 
-            deleteItem={deleteItem} 
-            handlePayment={handleSubmit} 
-            totalPrice={calculateTotal()} 
-            isAgreed={isAgreed} 
-            handleAgreementChange={handleAgreementChange} 
-            openLegalDocuments={openLegalDocuments} 
+          <OrderSummary
+            items={items}
+            deleteItem={deleteItem}
+            handlePayment={handleSubmit}
+            totalPrice={calculateTotal()}
+            isAgreed={isAgreed}
+            handleAgreementChange={handleAgreementChange}
+            openLegalDocuments={openLegalDocuments}
           />
         </div>
       </div>
@@ -183,12 +187,14 @@ const MainContainer = () => {
         <Form onChange={handleFormChange} />
       </div>
 
-      <LegalModal 
-        isOpen={isLegalModalOpen} 
-        closeModal={closeLegalDocuments} 
-        formData={formData} 
-        basketItems={items} 
+      <LegalModal
+        isOpen={isLegalModalOpen}
+        closeModal={closeLegalDocuments}
+        formData={formData}
+        basketItems={items}
       />
+      <div id="iyzipay-checkout-form" class="popup"></div>
+
     </div>
   );
 };
