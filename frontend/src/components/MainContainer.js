@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import './MainContainer.css';
 import DrinkButton from './DrinkButton';
 import OrderSummary from './OrderSummary';
@@ -11,6 +11,7 @@ import LoadingSpinner from './LoadingSpinner';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
+
 const MainContainer = () => {
   const [items, setItems] = useState([]);
   const [formData, setFormData] = useState({});
@@ -18,7 +19,7 @@ const MainContainer = () => {
   const [isLegalModalOpen, setLegalModalOpen] = useState(false);
   const [isAgreed, setIsAgreed] = useState(false);
   const [loading, setLoading] = useState(false); // Add loading state
-  const [checkoutFormContent, setCheckoutFormContent] = useState(""); // Add state for checkout form content
+
 
   const openLegalDocuments = () => {
     setLegalModalOpen(true);
@@ -64,9 +65,12 @@ const MainContainer = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent default form submission
+    console.log('Submitting payment...'); // Debugging line
 
     if (items.length === 0) {
       alert('Lütfen en az bir içecek seçiniz.');
+      console.log('Submitting payment...'); // Debugging line
+
       return;
     }
 
@@ -102,6 +106,7 @@ const MainContainer = () => {
       price: calculateTotal(),
     };
 
+    console.log('Sending payload:', payload);
     setLoading(true); // Set loading to true before payment submission
     try {
       const response = await fetch(`${apiUrl}/payment/create`, {
@@ -113,10 +118,9 @@ const MainContainer = () => {
       });
 
       const data = await response.json();
-      
       if (response.ok) {
         setLoading(false); // Set loading to false after successful payment submission
-        setCheckoutFormContent(data.checkoutFormContent); // Set the checkout form content
+        document.getElementById('iyzipay-checkout-form').innerHTML = data.checkoutFormContent;
       } else {
         alert('Ödeme oluşturma hatası. Lütfen daha sonra tekrar deneyiniz.');
         console.error('Ödeme oluşturma hatası:', data);
@@ -124,6 +128,8 @@ const MainContainer = () => {
     } catch (error) {
       alert('Ağ hatası. Lütfen internet bağlantınızı kontrol edip tekrar deneyiniz.');
       console.error('Ödeme oluşturma hatası:', error);
+    } finally {
+      console.log('Payment submission completed.');
     }
   };
 
@@ -131,23 +137,14 @@ const MainContainer = () => {
     return items.reduce((total, item) => total + item.quantity * item.price, 0);
   }, [items]);
 
-  useEffect(() => {
-    if (checkoutFormContent) {
-      const checkoutFormElement = document.getElementById('iyzipay-checkout-form');
-      if (checkoutFormElement) {
-        checkoutFormElement.innerHTML = checkoutFormContent; // Inject Iyzipay checkout form content
-      } else {
-        console.error('iyzipay-checkout-form element not found');
-      }
-    }
-  }, [checkoutFormContent]); // Only run this effect when the checkoutFormContent changes
-
   if (loading) {
     return <LoadingSpinner />; // Show loading spinner while loading
   }
 
   return (
     <div className="main-container">
+      <div id="iyzipay-checkout-form" class="responsive"></div>
+
       <div className="top-container">
         <div className="left-container">
           <DrinkButton
@@ -194,9 +191,6 @@ const MainContainer = () => {
         formData={formData}
         basketItems={items}
       />
-
-      {/* Iyzipay checkout form container */}
-      <div id="iyzipay-checkout-form" className="popup"></div>
     </div>
   );
 };
