@@ -42,7 +42,7 @@
 }
 
 .payment-logo {
-  width: 350px;
+  width: 500px;
   height: auto;
   cursor: pointer; /* Add cursor pointer */
 }
@@ -156,11 +156,9 @@
     align-items: center;
   }
 
-  .asunatech-logo,
-  .askida_icon {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    height: 40px;
+  .asunatech-logo {
+    margin: 0 10px 10px 0;
+    height: 30px;
   }
 
   .payment-logos {
@@ -187,3 +185,4 @@
     text-align: center;
   }
 }
+

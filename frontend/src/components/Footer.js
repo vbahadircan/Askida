@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import logo from '../assets/images/logo_beyaz.webp';
 import askida_icon from '../assets/images/askida_icon.webp';
-import iyzicofooter from '../assets/images/iyzicofooter.webp';
+import paytrfooter from '../assets/images/paytr-footer.webp';
 import app_store from '../assets/images/app_store.webp';
 import play_store from '../assets/images/play_store.webp';
 
@@ -25,8 +25,8 @@ const Footer = () => {
             <img src={askida_icon} alt="Asunatech Logo" className="askida_icon" />
           </div>
           <div className="payment-logos">
-            <a href="https://www.iyzico.com" target="_blank" rel="noopener noreferrer">
-              <img src={iyzicofooter} alt="Iyzico Logo" className="payment-logo" />
+            <a href="https://www.paytr.com/" target="_blank" rel="noopener noreferrer">
+              <img src={paytrfooter} alt="Iyzico Logo" className="payment-logo" />
             </a>
           </div>
 
