@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import './MainContainer.css';
 import DrinkButton from './DrinkButton';
 import OrderSummary from './OrderSummary';
@@ -133,23 +133,40 @@ const MainContainer = () => {
     return items.reduce((total, item) => total + item.quantity * item.price, 0);
   }, [items]);
 
+  // Load and initialize iFrameResizer only if iframeToken is available
+  useEffect(() => {
+    if (iframeToken) {
+      const script = document.createElement('script');
+      script.src = "https://www.paytr.com/js/iframeResizer.min.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      script.onload = () => {
+        iFrameResize({}, '#paytriframe');
+      };
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [iframeToken]);
+
   if (loading) {
     return <LoadingSpinner />;
   }
 
-  // If the iframe token is available, render the payment screen
+  // Render the payment iframe only if iframeToken is available
   if (iframeToken) {
     return (
-      <div className="payment-container">
-        <script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
+      <div className="payment-container" style={{ height: '100vh', overflow: 'hidden' }}>
+        <h1>Ödeme Sayfası</h1>
         <iframe
           src={`https://www.paytr.com/odeme/guvenli/${iframeToken}`}
           id="paytriframe"
-          style={{width: '100%' }}
+          frameBorder="0"
+          scrolling="no"
+          style={{ width: '100%', minHeight: '600px' }} // Set a minimum height as a fallback
         ></iframe>
-        <script>
-          iFrameResize({}, '#paytriframe');
-        </script>
       </div>
     );
   }
