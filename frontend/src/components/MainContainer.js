@@ -3,14 +3,11 @@ import './MainContainer.css';
 import DrinkButton from './DrinkButton';
 import OrderSummary from './OrderSummary';
 import Form from './Form';
-import LegalModal from './LegalModal'; // Import the LegalModal component
+import LegalModal from './LegalModal'; 
 import teaIconOrange from '../icons/tea-orange.svg';
 import coffeeIconOrange from '../icons/coffee-orange.svg';
 import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
 import LoadingSpinner from './LoadingSpinner';
-
-const apiUrl = process.env.REACT_APP_API_URL;
-
 
 const MainContainer = () => {
   const [items, setItems] = useState([]);
@@ -18,8 +15,8 @@ const MainContainer = () => {
   const drinkButtonRefs = useRef({});
   const [isLegalModalOpen, setLegalModalOpen] = useState(false);
   const [isAgreed, setIsAgreed] = useState(false);
-  const [loading, setLoading] = useState(false); // Add loading state
-
+  const [loading, setLoading] = useState(false); 
+  const [iframeToken, setIframeToken] = useState(null); // Store iframe token
 
   const openLegalDocuments = () => {
     setLegalModalOpen(true);
@@ -64,13 +61,11 @@ const MainContainer = () => {
   }, []);
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevent default form submission
-    console.log('Submitting payment...'); // Debugging line
+    event.preventDefault();
+    console.log('Submitting payment...');
 
     if (items.length === 0) {
       alert('Lütfen en az bir içecek seçiniz.');
-      console.log('Submitting payment...'); // Debugging line
-
       return;
     }
 
@@ -107,9 +102,10 @@ const MainContainer = () => {
     };
 
     console.log('Sending payload:', payload);
-    setLoading(true); // Set loading to true before payment submission
+    setLoading(true); 
+
     try {
-      const response = await fetch(`${apiUrl}/payment/create`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/payment/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -119,9 +115,9 @@ const MainContainer = () => {
 
       const data = await response.json();
       if (response.ok) {
-        setLoading(false); // Set loading to false after successful payment submission
-        window.location.href = data.paymentPageUrl;
-       } else {
+        setLoading(false);
+        setIframeToken(data.token); // Set the iframe token after successful payment
+      } else {
         alert('Ödeme oluşturma hatası. Lütfen daha sonra tekrar deneyiniz.');
         console.error('Ödeme oluşturma hatası:', data);
       }
@@ -138,7 +134,27 @@ const MainContainer = () => {
   }, [items]);
 
   if (loading) {
-    return <LoadingSpinner />; // Show loading spinner while loading
+    return <LoadingSpinner />;
+  }
+
+  // If the iframe token is available, render the payment screen
+  if (iframeToken) {
+    return (
+      <div className="payment-container">
+        <h1>Ödeme Sayfası</h1>
+        <script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
+        <iframe
+          src={`https://www.paytr.com/odeme/guvenli/${iframeToken}`}
+          id="paytriframe"
+          frameBorder="0"
+          scrolling="no"
+          style={{ width: '100%', height: '600px' }}
+        ></iframe>
+        <script>
+          iFrameResize({}, '#paytriframe');
+        </script>
+      </div>
+    );
   }
 
   return (
@@ -171,7 +187,7 @@ const MainContainer = () => {
           <OrderSummary
             items={items}
             deleteItem={deleteItem}
-            handlePayment={handleSubmit}
+            handlePayment={handleSubmit} // Submit payment when the button is clicked
             totalPrice={calculateTotal()}
             isAgreed={isAgreed}
             handleAgreementChange={handleAgreementChange}
