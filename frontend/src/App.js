@@ -25,9 +25,7 @@ function App() {
         <Route path="/mesafeli-satis-sozlesmesi" element={<LegalPolicyPage contentFile="data/mesafeli-satis-sozlesmesi.json" />} />
         <Route path="/iptal-ve-iade-kosullari" element={<LegalPolicyPage contentFile="data/iptal-ve-iade-kosullari.json" />} />
         <Route path="/uyelik-ve-kullanim-sartlari" element={<LegalPolicyPage contentFile="data/uyelik-ve-kullanim-sartlari.json" />} />
-        <Route path="/payment-success" element={<PaymentStatusPage />} />
-        <Route path="/payment-failure" element={<PaymentStatusPage />} />
-      
+        <Route path="/payment-status" element={<PaymentStatusPage />} />      
       </Routes>
     </div>
   );

@@ -98,6 +98,8 @@ const MainContainer = () => {
     const payload = {
       email: formData.email,
       phone_number: formData.phone_number,
+      address: formData.address, // Include address in payload
+      name: formData.name,
       price: calculateTotal(),
     };
 
