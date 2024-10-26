@@ -141,7 +141,6 @@ const MainContainer = () => {
   if (iframeToken) {
     return (
       <div className="payment-container">
-        <h1>Ödeme Sayfası</h1>
         <script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
         <iframe
           src={`https://www.paytr.com/odeme/guvenli/${iframeToken}`}

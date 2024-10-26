@@ -90,6 +90,12 @@ form input {
   font-size: 16px;
 }
 
+.payment-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+
 
 @media (max-width: 768px) {
   .main-container {
