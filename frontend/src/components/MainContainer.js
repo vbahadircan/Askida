@@ -146,9 +146,7 @@ const MainContainer = () => {
         <iframe
           src={`https://www.paytr.com/odeme/guvenli/${iframeToken}`}
           id="paytriframe"
-          frameBorder="0"
-          scrolling="no"
-          style={{ width: '100%', height: '600px' }}
+          style={{ border: 'none', overflow: 'hidden', width: '100%' }}
         ></iframe>
         <script>
           iFrameResize({}, '#paytriframe');
