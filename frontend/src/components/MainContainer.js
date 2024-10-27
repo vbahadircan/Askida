@@ -100,6 +100,7 @@ const MainContainer = () => {
       phone_number: formData.phone_number,
       address: formData.address, // Include address in payload
       name: formData.name,
+      items: items,
       price: calculateTotal()
     };
 
