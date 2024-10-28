@@ -43,7 +43,7 @@ const AboutPage = () => {
 
                 <section className={styles.section}>
                     <h2>İletişim Bilgilerimiz</h2>
-                    <p><strong>Adres:</strong> Göztepe Mahallesi İnönü Caddesi No: 396  Daire: 01 Konak/İzmir</p>
+                    <p><strong>Adres:</strong> Göztepe Mahallesi İnönü Caddesi No: 396  Daire: 07 Konak/İzmir</p>
                     <p><strong>Telefon:</strong> +90 506 628 82 92 Ege Cem Sun  +90 545 266 20 02 Elif Sena Asana </p>
                     <p><strong>Email:</strong> info@asunatech.com</p>
                 </section>
