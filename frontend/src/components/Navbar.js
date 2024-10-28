@@ -26,7 +26,7 @@ function Navbar({ logo, customClass, textColor = '#fff', backgroundColor = 'tran
         </Link>
       </div>
       <ul className="nav-links" style={{ color: textColor }}>
-        <li><Link to="/" style={{ color: textColor }}>Hakkımızda</Link></li>
+        <li><Link to="/about" style={{ color: textColor }}>Hakkımızda</Link></li>
         <li><a href="mailto:info@asunatech.com" style={{ color: textColor }}>İletişim</a></li>
         <li><Link to="/askida" style={{ color: textColor }}>ASKIDA</Link></li>
       </ul>

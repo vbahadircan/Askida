@@ -20,7 +20,6 @@
   margin: 0;
   padding: 0;
 }
-
 .nav-links li {
   display: inline-block;
 }
@@ -29,12 +28,14 @@
   text-decoration: none;
   color: #fff;
   padding: 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Add transition for smooth hover effect */
 }
 
 .nav-links li a:hover {
-  color: #FF7526; /* Hover color */
+  color: #FF7526; /* Hover text color */
+  background-color: rgba(255, 255, 255, 0.1); /* Add a slight background color on hover */
 }
+
 
 .download-button {
   background-color: #fff; /* White background */

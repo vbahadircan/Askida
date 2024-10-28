@@ -9,6 +9,7 @@ import AccDeletionPage from './pages/AccDeletionPage';
 import PaymentPage from './pages/PaymentPage';
 import LegalPolicyPage from './pages/LegalPolicyPage';
 import PaymentStatusPage from './pages/PaymentStatusPage';
+import AboutPage from './pages/AboutPage';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/askida" element={<HomePage />} />
         <Route path="/askida/askiya-birak" element={<QrCodeGeneration />} />
         <Route path="/404" element={<ComingSoonPage />} />
