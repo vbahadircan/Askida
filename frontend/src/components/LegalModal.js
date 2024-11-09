@@ -1,20 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const LegalModal = ({ isOpen, closeModal, formData, basketItems }) => {
+const LegalModal = ({ isOpen, closeModal, formData, donationAmount }) => {
   const [activeTab, setActiveTab] = useState('onBilgilendirme');
   const modalRef = useRef(null);
 
   const renderBasketItems = () => {
-    return basketItems.map((item, index) => (
-      <p key={index}>
-        {item.name} {item.price} TL ({item.price} x {item.quantity})
+    return (
+      <p>
+        {donationAmount} TL değerinde askıda kahve
       </p>
-    ));
+    );
   };
 
-  const calculateTotalPrice = (items) => {
-    return items.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
-  };
+
 
   useEffect(() => {
     if (isOpen) {
@@ -53,7 +51,7 @@ const LegalModal = ({ isOpen, closeModal, formData, basketItems }) => {
 
         <section>
           <h3 className="font-semibold">2. ALICIYA İLİŞKİN BİLGİLER</h3>
-          <p>Adı Soyadı : {formData.name}</p>
+          <p>Adı Soyadı : {formData.firstName} {formData.lastName}</p>
           <p>Adresi : {formData.address}</p>
           <p>Telefon : {formData.phone_number}</p>
           <p>E-mail : {formData.email}</p>
@@ -68,8 +66,8 @@ const LegalModal = ({ isOpen, closeModal, formData, basketItems }) => {
           <h3 className="font-semibold">4. SÖZLEŞME KONUSU ÜRÜNÜN TEMEL ÖZELLİKLERİ ve ÖDEME BİLGİLERİ</h3>
           <p>İşbu kısımda sözleşme konusu ürün ya da ürünlerin temel özellikleri açıklanmaktadır.</p>
           {renderBasketItems()} {/* Render the basket items here */}
-          <p>Sepet Fiyatı: {calculateTotalPrice(basketItems)} TL</p>
-          <p>Toplam Fiyat: {calculateTotalPrice(basketItems)} TL</p>
+          <p>Sepet Fiyatı: {donationAmount} TL</p>
+          <p>Toplam Fiyat: {donationAmount} TL</p>
         </section>
 
         <section>
@@ -155,9 +153,9 @@ const LegalModal = ({ isOpen, closeModal, formData, basketItems }) => {
           <p>E-mail: info@asunatech.com</p>
           <p>Telefon : 0 506 628 82 92</p>
           <p>1.2. Alıcı :</p>
-          <p>Adı Soyadı : {formData.name}</p>
+          <p>Adı Soyadı : {formData.firstName} {formData.lastName}</p>
           <p>Adresi : {formData.address}</p>
-          <p>Telefon : {formData.phone}</p>
+          <p>Telefon : {formData.phone_number}</p>
           <p>E-mail : {formData.email}</p>
         </section>
 
@@ -170,8 +168,8 @@ const LegalModal = ({ isOpen, closeModal, formData, basketItems }) => {
           <h3 className="font-semibold">MADDE 3- SÖZLEŞME KONUSU ÜRÜN</h3>
           <p>3.1- Ürünlerin adı, miktarı, vergiler dahil satış bedeli (adet x birim fiyat olarak) aşağıda belirtildiği gibidir.</p>
           {renderBasketItems()} {/* Render the basket items here */}
-          <p>Sepet Fiyatı: {calculateTotalPrice(basketItems)} TL</p>
-          <p>Toplam Fiyat: {calculateTotalPrice(basketItems)} TL</p>
+          <p>Sepet Fiyatı: {donationAmount} TL</p>
+          <p>Toplam Fiyat: {donationAmount} TL</p>
           <p>3.2- Ödeme Şekli : Kredi Kartı İle</p>
           <p>Bankanız, kampanyalar düzenleyerek sizin seçtiğiniz taksit adedinin daha üstünde bir taksit adedi uygulayabilir, taksit öteleme gibi hizmetler sunabilir. Bu tür kampanyalar bankanızın insiyatifindedir.</p>
           <p>Kredi kartınızın hesap kesim tarihinden itibaren sipariş toplamı taksit adedine bölünerek kredi kartı özetinize bankanız tarafından yansıtılacaktır. Bankanız, taksit tutarlarını küsurat farklarını dikkate alarak aylara eşit olarak dağıtmayabilir. Detaylı ödeme planınızın oluşturulması bankanız insiyatifindedir.</p>

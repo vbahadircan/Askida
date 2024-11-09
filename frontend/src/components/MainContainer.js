@@ -1,22 +1,37 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import './MainContainer.css';
-import DrinkButton from './DrinkButton';
-import OrderSummary from './OrderSummary';
 import Form from './Form';
-import LegalModal from './LegalModal'; 
-import teaIconOrange from '../icons/tea-orange.svg';
-import coffeeIconOrange from '../icons/coffee-orange.svg';
-import icedCoffeeIconOrange from '../icons/iced-coffee-orange.svg';
-import LoadingSpinner from './LoadingSpinner';
+import LegalModal from './LegalModal';
+import LoadingSpinner from './PaymentLoadingScreen';
+import AskidaKahveContainer from './AskidaKahveContainer';
 
 const MainContainer = () => {
-  const [items, setItems] = useState([]);
-  const [formData, setFormData] = useState({});
-  const drinkButtonRefs = useRef({});
+  const [formData, setFormData] = useState({
+    email: '',
+    phone_number: '',
+    address: '',
+    name: '',
+  });
+
+  
+  const [donationAmount, setDonationAmount] = useState('');
   const [isLegalModalOpen, setLegalModalOpen] = useState(false);
   const [isAgreed, setIsAgreed] = useState(false);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const [iframeToken, setIframeToken] = useState(null); // Store iframe token
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleDonationChange = (e) => {
+    setDonationAmount(Number(e.target.value));
+  };
+  
 
   const openLegalDocuments = () => {
     setLegalModalOpen(true);
@@ -30,44 +45,11 @@ const MainContainer = () => {
     setIsAgreed(e.target.checked);
   };
 
-  const updateItems = useCallback((name, price, quantity) => {
-    setItems(prevItems => {
-      const updatedItems = [...prevItems];
-      const itemIndex = updatedItems.findIndex(item => item.name === name);
-
-      if (itemIndex !== -1) {
-        if (quantity === 0) {
-          updatedItems.splice(itemIndex, 1);
-        } else {
-          updatedItems[itemIndex].quantity = quantity;
-        }
-      } else if (quantity > 0) {
-        updatedItems.push({ name, price, quantity });
-      }
-
-      return updatedItems;
-    });
-  }, []);
-
-  const deleteItem = useCallback((name) => {
-    setItems(prevItems => prevItems.filter(item => item.name !== name));
-    if (drinkButtonRefs.current[name]) {
-      drinkButtonRefs.current[name].resetCounter();
-    }
-  }, []);
-
-  const handleFormChange = useCallback((data) => {
-    setFormData(prevState => ({ ...prevState, ...data }));
-  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Submitting payment...');
 
-    if (items.length === 0) {
-      alert('Lütfen en az bir içecek seçiniz.');
-      return;
-    }
 
     if (!formData.email) {
       alert('Lütfen bir e-posta adresi giriniz.');
@@ -95,17 +77,21 @@ const MainContainer = () => {
       return;
     }
 
+    if (!donationAmount || donationAmount <= 0) {
+      alert('Bağış miktarı 0 olamaz. Lütfen geçerli bir bağış miktarı giriniz.');
+      return;
+    }
+
     const payload = {
       email: formData.email,
       phone_number: formData.phone_number,
       address: formData.address, // Include address in payload
-      name: formData.name,
-      items: items,
-      price: calculateTotal()
+      name: `${formData.firstName} ${formData.lastName}`,
+      price: donationAmount,
     };
 
     console.log('Sending payload:', payload);
-    setLoading(true); 
+    setLoading(true);
 
     try {
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/payment/create`, {
@@ -132,9 +118,6 @@ const MainContainer = () => {
     }
   };
 
-  const calculateTotal = useCallback(() => {
-    return items.reduce((total, item) => total + item.quantity * item.price, 0);
-  }, [items]);
 
   if (loading) {
     return <LoadingSpinner />;
@@ -148,62 +131,46 @@ const MainContainer = () => {
         <iframe
           src={`https://www.paytr.com/odeme/guvenli/${iframeToken}`}
           id="paytriframe"
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
         ></iframe>
         <script>
-          iFrameResize({}, '#paytriframe');
+          iFrameResize({ }, '#paytriframe');
         </script>
       </div>
     );
   }
 
   return (
-    <div className="main-container">
-      <div className="top-container">
-        <div className="left-container">
-          <DrinkButton
-            ref={el => drinkButtonRefs.current["Askıda Çay"] = el}
-            drinkName="Askıda Çay"
-            drinkPrice={6.24}
-            icon={teaIconOrange}
-            updateItems={updateItems}
-          />
-          <DrinkButton
-            ref={el => drinkButtonRefs.current["Askıda Kahve"] = el}
-            drinkName="Askıda Kahve"
-            drinkPrice={31.20}
-            icon={coffeeIconOrange}
-            updateItems={updateItems}
-          />
-          <DrinkButton
-            ref={el => drinkButtonRefs.current["Askıda Soğuk Kahve"] = el}
-            drinkName="Askıda Soğuk Kahve"
-            drinkPrice={55.12}
-            icon={icedCoffeeIconOrange}
-            updateItems={updateItems}
-          />
-        </div>
-        <div className="right-container">
-          <OrderSummary
-            items={items}
-            deleteItem={deleteItem}
-            handlePayment={handleSubmit} // Submit payment when the button is clicked
-            totalPrice={calculateTotal()}
-            isAgreed={isAgreed}
-            handleAgreementChange={handleAgreementChange}
-            openLegalDocuments={openLegalDocuments}
-          />
-        </div>
-      </div>
-      <div className="bottom-container">
-        <Form onChange={handleFormChange} />
-      </div>
+<div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Main Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left Column - Personal Information Form */}
+          <div className="bg-white rounded-xl shadow-sm p-6">
+            <Form 
+              formData={formData}
+              handleChange={handleChange}
+            />
+          </div>
 
+          {/* Right Column - Donation Container */}
+          <div className="lg:max-w-none">
+            <AskidaKahveContainer
+              donationAmount={donationAmount}
+              handleDonationChange={handleDonationChange}
+              isAgreed={isAgreed}
+              handleAgreementChange={handleAgreementChange}
+              openLegalDocuments={openLegalDocuments}
+              handleSubmit={handleSubmit}
+            />
+          </div>
+        </div>
+      </div>
       <LegalModal
         isOpen={isLegalModalOpen}
         closeModal={closeLegalDocuments}
         formData={formData}
-        basketItems={items}
+        donationAmount={donationAmount}
       />
     </div>
   );

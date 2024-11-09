@@ -1,31 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const PersonalInfoForm = ({ onChange }) => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone_number: '',
-    address: '',
-  });
-
-  useEffect(() => {
-    onChange({ email: formData.email, phone_number: formData.phone_number, address: formData.address, name: `${formData.firstName} ${formData.lastName}` });
-  }, [formData, onChange]); // Only update when these fields change
-
-  const handleChange = (e) => {
-    const { name, value, type, } = e.target;
-    if (type === 'checkbox') {
-      setFormData((prevState) => ({
-        ...prevState,
-      }));
-    } else {
-      setFormData((prevState) => ({
-        ...prevState,
-        [name]: value,
-      }));
-    }
-  };
+const PersonalInfoForm = ({ formData, handleChange }) => {
 
   return (
     <form>

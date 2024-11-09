@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import styles from './LegalPolicyPage.module.css';
 import './LegalPolicyPage.css';
 import logo from '../assets/images/logo_beyaz.webp';
-import LoadingSpinner from '../components/LoadingSpinner';
+import LoadingSpinner from '../components/PaymentLoadingScreen';
 
 const LegalPolicyPage = ({ contentFile }) => {
   const [contentData, setContentData] = useState(null);
