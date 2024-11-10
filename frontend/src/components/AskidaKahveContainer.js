@@ -79,7 +79,7 @@ const AskidaKahveContainer = ({ donationAmount, handleDonationChange, isAgreed, 
         </div>
         <div className="mb-6">
           <p className="text-gray-600">
-            Ne kadar TL değerinde kahve askıya bırakmak istersiniz?
+            Ne kadar TL değerinde içecek askıya bırakmak istersiniz?
           </p>
         </div>
         <div className="flex items-center justify-between gap-4 mb-8">

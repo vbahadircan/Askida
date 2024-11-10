@@ -7,7 +7,7 @@ const LegalModal = ({ isOpen, closeModal, formData, donationAmount }) => {
   const renderBasketItems = () => {
     return (
       <p>
-        {donationAmount} TL değerinde askıda kahve
+        {donationAmount} TL değerinde askıda içecek
       </p>
     );
   };
@@ -78,7 +78,7 @@ const LegalModal = ({ isOpen, closeModal, formData, donationAmount }) => {
         <section>
           <h3 className="font-semibold">6. MAL/HİZMETİN TESLİMATI</h3>
           <p>Teslimat, işletmenin açık müsait olması ve mal bedelinin Satıcının hesabına geçmesinden sonra mümkün olan en kısa sürede yapılır. Doğal afetler, hava muhalefeti vs. gibi mücbir sebeplerle gecikmeler olabilir. Satıcı, malı/hizmeti siparişinden itibaren 30 (Otuz) gün içinde teslim eder.</p>
-          <p>Mal/hizmetin teslimi Satıcının, web sitesinde, ilan ettiği şekilde, ……… işyerlerinde askıya çıkarılıp, tüketicinin askıdan alması yöntemi ile doğrudan tüketecek kişiye yapılmaktadır.</p>
+          <p>Mal/hizmetin teslimi Satıcının, web sitesinde, ilan ettiği şekilde, Askıda uygulaması geçerli işyerlerinde askıya çıkarılıp, tüketicinin askıdan alması yöntemi ile doğrudan tüketecek kişiye yapılmaktadır.</p>
           <p>Sipariş konusu mal/hizmetin teslimatı için mesafeli satış sözleşmesinin imzalı bir nüshasının Satıcıya ulaştırılmış olması ve bedelinin Alıcının tercih ettiği ödeme sekli ile ödenmiş olması şarttır. Herhangi bir nedenle mal/hizmet bedeli ödenmez veya banka kayıtlarında iptal edilir ise, Satıcı mal/hizmetin teslimi yükümlülüğünden kurtulmuş kabul edilir.</p>
         </section>
 
@@ -181,15 +181,14 @@ const LegalModal = ({ isOpen, closeModal, formData, donationAmount }) => {
           <p>Fatura Bilgileri</p>
           <p>Fatura Tipi : Bireysel</p>
           <p>T.C. Kimlik No : 11111111111</p>
-          <p>Ad Soyad: {formData.name}</p>
+          <p>Ad Soyad: {formData.firstName} {formData.lastName}</p>
           <p>İl : Ankara</p>
           <p>Adres : {formData.address}</p>
           <p>E-mail : {formData.email}</p>
-          <p>Telefon : {formData.phone}</p>
+          <p>Telefon : {formData.phone_number}</p>
           <p>Teslimat Bilgileri</p>
-          <p>Ad Soyad : {formData.name}</p>
-          <p>Telefon : {formData.phone}</p>
-          <p>İl : {formData.city}</p>
+          <p>Ad Soyad : {formData.firstName} {formData.lastName}</p>
+          <p>Telefon : {formData.phone_number}</p>
           <p>Adres : {formData.address}</p>
           <p>Ürün, askıdan alan tüketiciye teslim edilecektir.</p>
           <p>Teslimat Masrafları : Teslimat masrafı yoktur.</p>
@@ -237,7 +236,7 @@ const LegalModal = ({ isOpen, closeModal, formData, donationAmount }) => {
         </section>
 
         <section>
-          <p>ALICI: {formData.name}</p>
+          <p>ALICI: {formData.firstName} {formData.lastName}</p>
           <p>TARİH: {new Date().toLocaleDateString()}</p>
         </section>
 
