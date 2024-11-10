@@ -8,11 +8,11 @@ import play_store from '../assets/images/play_store.webp';
 
 const Footer = () => {
   const handlePlayStoreClick = () => {
-    window.location.href = '/404';
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.asunatech.askda&hl=tr';
   };
 
   const handleAppStoreClick = () => {
-    window.location.href = '/404';
+    window.location.href = 'https://apps.apple.com/tr/app/ask%C4%B1da/id6642640155?l=tr&platform=iphone';
   };
 
 
