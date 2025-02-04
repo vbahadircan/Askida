@@ -30,7 +30,7 @@ const FreeDrinksBanner = ({ number, numberColor = 'orange' }) => {
 
   return (
     <div className="free-drinks-banner">
-      Şu ana kadar <span className="number" style={numberStyle}>{count}</span> içecek askıdan alındı
+      Şu ana kadar <span className="number" style={numberStyle}>{count}</span>'den fazla içecek askıdan alındı
     </div>
   );
 };
