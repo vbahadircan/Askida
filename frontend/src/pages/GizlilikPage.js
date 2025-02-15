@@ -37,6 +37,7 @@ const GizlilikPage = () => {
 
 
           Çocuk Güvenliği ve CSAM Politikamız
+
           Uygulamamız, çocuk istismarı ve çocuk güvenliği ile ilgili en yüksek güvenlik standartlarını benimsemektedir. Kullanıcılarımızın, çocuk istismarına veya kötü muameleye yönelik içerik oluşturması, paylaşması, dağıtması veya yüklemesi kesinlikle yasaktır.
 
           Şüpheli içeriklerin bildirilmesi:
